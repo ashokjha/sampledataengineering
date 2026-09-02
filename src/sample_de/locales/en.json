@@ -1,0 +1,27 @@
+{
+    "title": "Monthly Sales Data",
+    "xlabel": "Months",
+    "ylabel": "Revenue (in USD)",
+    "legend_actual": "Actual Sales",
+    "legend_predicted": "Predicted Sales",
+    "Total_Sales": "Total_Sales",
+    "Category_Sales": "Category Sales",
+    "Category": "Category",
+    "SubCategory": "SubCategory",
+    "Subcategories": "Subcategories",
+    "Quantity_Distribution_by_Region": "Quantity Distribution by Region",
+    "Monthly_Sales_Trend_by_Subcategory": "Monthly Sales Trend by Subcategory",
+    "Revenue_by_Product_Category": "Revenue by Product Category",
+    "Month_Timeline": "Month (Timeline)",
+    "Price_Distribution_by_Category_and_Subcategory": "Price Distribution by Category and Subcategory",
+    "Price_Per_Unit": "Price Per Unit ($)",
+    "Main_Categories": "Main Categories",
+    "Monthly_Sales_Trend": "Monthly Sales Trend",
+    "Category-wise_Revenue": "Category-wise Revenue",
+    "Stock_Performance_Candlestick_Chart": "Stock Performance Candlestick Chart",
+    "Price_Dollar": "Price ($)",
+    "Volume": "Volume"
+
+
+
+}

@@ -1,0 +1,101 @@
+Order_ID,Date,Product,Category,Subcategory,Quantity,Price_Per_Unit,Region
+1,2026-06-25,Smartphone,Electronics,Smartwatch,34.0,802.03,South
+2,2026-07-08,Headphones,Electronics,Smartwatch,,471.64,East
+3,2026-07-12,Headphones,Electronics,Laptop,,454.47,North
+4,2026-08-23,Jeans,Clothing,Jeans,,487.62,West
+5,2026-05-23,Jeans,Clothing,T-Shirt,4.0,97.61,North
+6,2026-02-15,Laptop,Electronics,Smartphone,22.0,175.14,North
+7,2025-10-23,Headphones,Electronics,Smartwatch,,547.02,Central
+8,2026-02-09,Air Purifier,Home Appliances,Microwave,48.0,981.81,West
+9,2026-03-08,Microwave,Home Appliances,Coffee Maker,,763.33,West
+10,2025-11-29,T-Shirt,Clothing,Jeans,22.0,585.18,North
+11,2026-07-29,Jeans,Clothing,Jacket,9.0,547.54,South
+12,2026-05-11,Sneakers,Clothing,Jeans,,348.75,West
+13,2026-05-05,Jeans,Clothing,Jeans,11.0,526.67,East
+14,2026-08-02,Smartphone,Electronics,Smartphone,10.0,308.08,South
+15,2025-11-12,Microwave,Home Appliances,Air Purifier,,183.35,West
+16,2025-10-29,Jacket,Clothing,Jacket,36.0,107.73,East
+17,2026-06-03,Laptop,Electronics,Smartphone,,106.16,South
+18,2026-04-25,Jeans,Clothing,Sneakers,6.0,42.33,Central
+19,2026-04-11,Sneakers,Clothing,Jeans,,528.83,South
+20,2026-05-24,Jacket,Clothing,Jeans,23.0,212.3,West
+21,2025-10-01,Laptop,Electronics,Smartwatch,,404.98,South
+22,2025-10-30,Laptop,Electronics,Smartwatch,,547.38,West
+23,2025-11-21,Coffee Maker,Home Appliances,Microwave,,497.02,South
+24,2025-09-09,Laptop,Electronics,Smartwatch,34.0,60.28,Central
+25,2025-11-08,Air Purifier,Home Appliances,Air Purifier,,524.53,South
+26,2026-05-06,Sneakers,Clothing,Jeans,,801.87,South
+27,2026-01-22,Jeans,Clothing,T-Shirt,,820.61,Central
+28,2025-11-27,Laptop,Electronics,Laptop,,152.53,East
+29,2025-12-17,Vacuum Cleaner,Home Appliances,Coffee Maker,36.0,766.41,South
+30,2026-02-08,Smartwatch,Electronics,Smartphone,,30.83,West
+31,2026-01-08,T-Shirt,Clothing,Jeans,,954.31,West
+32,2026-04-07,Jacket,Clothing,Jacket,,208.47,East
+33,2026-04-25,T-Shirt,Clothing,Sneakers,31.0,239.98,North
+34,2026-07-31,Smartphone,Electronics,Laptop,,952.63,South
+35,2026-03-14,Microwave,Home Appliances,Coffee Maker,,120.64,East
+36,2025-10-08,Smartwatch,Electronics,Headphones,,253.01,South
+37,2026-06-29,Sneakers,Clothing,Sneakers,,600.82,South
+38,2025-11-12,Jacket,Clothing,T-Shirt,27.0,649.35,Central
+39,2025-12-29,Smartphone,Electronics,Smartphone,16.0,505.5,North
+40,2025-11-13,Smartphone,Electronics,Laptop,1.0,940.15,North
+41,2026-06-02,Air Purifier,Home Appliances,Air Purifier,,520.43,North
+42,2026-06-03,Air Purifier,Home Appliances,Air Purifier,29.0,698.99,North
+43,2026-05-25,Smartwatch,Electronics,Headphones,,805.3,West
+44,2025-10-27,Coffee Maker,Home Appliances,Vacuum Cleaner,,143.94,South
+45,2025-09-18,Jeans,Clothing,Jacket,2.0,941.25,East
+46,2025-10-13,Vacuum Cleaner,Home Appliances,Coffee Maker,,442.82,South
+47,2025-09-24,Smartwatch,Electronics,Headphones,48.0,753.7,South
+48,2025-11-08,Sneakers,Clothing,T-Shirt,,88.55,West
+49,2025-11-15,Laptop,Electronics,Headphones,23.0,559.36,East
+50,2026-05-14,Smartwatch,Electronics,Smartwatch,,274.46,South
+51,2025-09-28,Coffee Maker,Home Appliances,Coffee Maker,2.0,766.52,North
+52,2026-03-25,Air Purifier,Home Appliances,Coffee Maker,,244.08,South
+53,2026-04-28,Smartphone,Electronics,Laptop,36.0,506.37,West
+54,2025-11-03,T-Shirt,Clothing,Jeans,,304.72,West
+55,2025-12-18,Jacket,Clothing,Jeans,,392.89,West
+56,2026-05-04,Smartphone,Electronics,Laptop,45.0,547.85,East
+57,2025-11-24,Jacket,Clothing,Jacket,,561.64,Central
+58,2026-03-07,Coffee Maker,Home Appliances,Air Purifier,30.0,301.55,West
+59,2026-01-22,Headphones,Electronics,Smartwatch,,791.43,Central
+60,2026-08-07,Vacuum Cleaner,Home Appliances,Coffee Maker,24.0,123.57,East
+61,2025-10-23,Smartphone,Electronics,Smartphone,28.0,134.33,West
+62,2025-12-16,Jeans,Clothing,Jacket,,38.82,Central
+63,2025-11-05,Laptop,Electronics,Laptop,,981.66,Central
+64,2025-10-10,Jacket,Clothing,T-Shirt,38.0,29.95,East
+65,2026-07-28,Headphones,Electronics,Smartwatch,,274.79,Central
+66,2026-08-17,Coffee Maker,Home Appliances,Microwave,6.0,161.02,North
+67,2026-01-18,Smartphone,Electronics,Laptop,,686.36,West
+68,2026-03-19,Air Purifier,Home Appliances,Air Purifier,42.0,545.68,North
+69,2026-07-28,Laptop,Electronics,Headphones,10.0,211.16,South
+70,2026-06-07,Air Purifier,Home Appliances,Air Purifier,,115.89,South
+71,2026-05-29,Jeans,Clothing,T-Shirt,2.0,16.81,South
+72,2025-09-12,Smartwatch,Electronics,Smartwatch,,865.57,West
+73,2026-07-04,Sneakers,Clothing,Jeans,3.0,987.04,East
+74,2025-12-11,Laptop,Electronics,Smartwatch,31.0,440.55,Central
+75,2026-05-18,Coffee Maker,Home Appliances,Vacuum Cleaner,15.0,141.8,South
+76,2026-07-04,Coffee Maker,Home Appliances,Coffee Maker,47.0,151.32,South
+77,2026-01-08,Microwave,Home Appliances,Vacuum Cleaner,,194.02,East
+78,2025-10-10,Microwave,Home Appliances,Vacuum Cleaner,,711.88,South
+79,2026-05-16,Coffee Maker,Home Appliances,Air Purifier,,640.69,South
+80,2026-01-06,Coffee Maker,Home Appliances,Vacuum Cleaner,,61.47,Central
+81,2026-08-09,Headphones,Electronics,Headphones,27.0,254.4,North
+82,2026-03-26,Jacket,Clothing,T-Shirt,46.0,912.85,North
+83,2025-11-27,Headphones,Electronics,Laptop,49.0,915.82,North
+84,2025-09-10,Jeans,Clothing,Jeans,42.0,585.13,Central
+85,2026-08-18,Smartphone,Electronics,Smartwatch,,394.41,North
+86,2026-05-04,Jacket,Clothing,Jacket,20.0,49.17,Central
+87,2026-08-08,Jacket,Clothing,Sneakers,,977.37,West
+88,2025-09-25,Coffee Maker,Home Appliances,Coffee Maker,,123.74,North
+89,2026-04-17,Smartphone,Electronics,Smartwatch,,521.09,Central
+90,2026-07-03,Microwave,Home Appliances,Microwave,44.0,802.55,East
+91,2026-04-09,Microwave,Home Appliances,Microwave,,805.4,South
+92,2026-06-21,Microwave,Home Appliances,Air Purifier,,93.92,East
+93,2025-10-12,Coffee Maker,Home Appliances,Coffee Maker,10.0,479.64,East
+94,2026-05-28,Coffee Maker,Home Appliances,Microwave,,946.15,North
+95,2026-08-25,T-Shirt,Clothing,T-Shirt,9.0,309.61,Central
+96,2026-04-10,Jacket,Clothing,Sneakers,39.0,982.55,West
+97,2025-12-03,Headphones,Electronics,Headphones,,53.81,East
+98,2026-03-09,Smartphone,Electronics,Smartwatch,,803.79,Central
+99,2026-02-27,Vacuum Cleaner,Home Appliances,Vacuum Cleaner,,942.95,South
+100,2025-10-25,Air Purifier,Home Appliances,Air Purifier,6.0,212.32,North

@@ -1,0 +1,23 @@
+{
+    "title": "मासिक बिक्री डेटा",
+    "xlabel": "महीने",
+    "ylabel": "राजस्व (USD में)",
+    "legend_actual": "वास्तविक बिक्री",
+    "legend_predicted": "प्रत्याशित बिक्री",
+    "Total_Sales": "कुल बिक्री",
+    "Category_Sales": "श्रेणी बिक्री",
+    "Category": "श्रेणी",
+    "SubCategory": "उपश्रेणी",
+    "Subcategories": "उपश्रेणियाँ",
+    "Monthly_Sales_Trend_by_Subcategory": "उपश्रेणी द्वारा मासिक बिक्री प्रवृत्ति",
+    "Revenue_by_Product_Category": "उत्पाद श्रेणी द्वारा राजस्व",
+    "Month_Timeline": "महीना (समयरेखा)",
+    "Price_Distribution_by_Category_and_Subcategory": "श्रेणी और उपश्रेणी द्वारा मूल्य वितरण",
+    "Price_Per_Unit": "प्रति इकाई मूल्य ($)",
+    "Main_Categories": "मुख्य श्रेणियाँ",
+    "Monthly_Sales_Trend": "मासिक बिक्री प्रवृत्ति",
+    "Category-wise_Revenue": "श्रेणी-वार राजस्व",
+    "Stock_Performance_Candlestick_Chart": "स्टॉक प्रदर्शन कैंडलस्टिक चार्ट",
+    "Price_Dollar": "मूल्य ($)",
+    "Volume": "आयतन"
+}
