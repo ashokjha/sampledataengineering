@@ -7,8 +7,8 @@ import json
 from  sample_de.utils.create_data import sample_data_creator
 from sample_de.process.clean_data import clean_data
 from sample_de.process.process_data import process_data
-from sample_de.vis.create_candlestick_chart import candle_stick_chart
-from sample_de.vis.analysis_visual import sales_and_revenue
+from sample_de.viz.create_candlestick_chart import candle_stick_chart
+from sample_de.viz.analysis_visual import sales_and_revenue
 class Dode:
     """
     A class to handle the data processing pipeline.

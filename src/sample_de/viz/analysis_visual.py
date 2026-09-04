@@ -84,6 +84,7 @@ class sales_and_revenue:
         axes[1].legend(title=self.translation.get_text("Main_Categories", self.langLocal))
 
         # लेआउट को सुव्यवस्थित करें ताकि कोई भी टेक्स्ट आपस में न टकराए
+        # correct the layout to correct sny cross cutting line(s)
         plt.tight_layout()
         # Save the figure to a file
         plt.savefig(os.path.join(self.chartsPath, f"sales_visualizations_{self.langLocal}.png"))

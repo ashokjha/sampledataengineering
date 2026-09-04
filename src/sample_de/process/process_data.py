@@ -113,6 +113,8 @@ class process_data:
     
 
 if __name__ == "__main__":
+    import os
+    from dotenv import load_dotenv
     load_dotenv()
     # Create a sample dataset for testing purposes
     # Example usage
