@@ -1,0 +1,101 @@
+Order_ID,Date,Product,Category,Subcategory,Quantity,Price_Per_Unit,Region
+ORD1025,2026-05-06,Cast Iron Skillet,Home & Kitchen,Cookware,2.0,107,East
+ORD1007,2026-01-25,Dell XPS 13,Electronics,Laptops,14.0,719,East
+ORD1033,2026-02-24,Knife Set,Home & Kitchen,Cookware,3.0,136,South
+ORD1074,2026-06-23,Knife Set,Home & Kitchen,Cookware,15.0,61,East
+ORD1038,2026-04-24,Pixel 8,Electronics,Smartphones,2.0,118,West
+ORD1046,2026-05-30,White Sneakers,Clothing,Footwear,9.0,95,East
+ORD1003,2026-01-09,Cast Iron Skillet,Home & Kitchen,Cookware,2.0,70,South
+ORD1041,2026-04-19,Sweatpants,Clothing,Bottomwear,12.0,139,South
+ORD1064,2026-04-28,Galaxy S24,Electronics,Smartphones,5.0,481,South
+ORD1004,2026-05-24,Air Fryer,Home & Kitchen,Appliances,12.0,122,South
+ORD1015,2026-01-17,Jeans,Clothing,Bottomwear,15.0,95,South
+ORD1030,2026-02-27,iPhone 15,Electronics,Smartphones,6.0,58,South
+ORD1005,2026-03-13,Running Shoes,Clothing,Footwear,13.0,55,West
+ORD1028,2026-06-05,Leather Boots,Clothing,Footwear,4.0,66,East
+ORD1072,2026-05-10,Non-Stick Pan,Home & Kitchen,Cookware,11.0,119,East
+ORD1032,2026-03-26,iPhone 15,Electronics,Smartphones,9.0,502,East
+ORD1011,2026-04-08,Galaxy S24,Electronics,Smartphones,8.0,762,South
+ORD1026,2026-03-03,Pixel 8,Electronics,Smartphones,2.0,190,West
+ORD1061,2026-03-02,Air Fryer,Home & Kitchen,Appliances,13.0,60,East
+ORD1024,2026-02-11,ThinkPad T14,Electronics,Laptops,13.0,1101,North
+ORD1053,2026-05-22,iPhone 15,Electronics,Smartphones,5.0,592,South
+ORD1010,2026-01-12,Espresso Machine,Home & Kitchen,Appliances,4.0,89,West
+ORD1038,2026-04-24,Pixel 8,Electronics,Smartphones,2.0,118,North
+ORD1078,2026-06-22,Galaxy S24,Electronics,Smartphones,4.0,422,South
+ORD1050,2026-01-18,MacBook Air,Electronics,Laptops,6.0,598,South
+ORD1018,2026-02-05,Flannel Shirt,Clothing,Topwear,8.0,38,North
+ORD1010,2026-01-12,Espresso Machine,Home & Kitchen,Appliances,4.0,89,North
+ORD1037,2026-02-05,Non-Stick Pan,Home & Kitchen,Cookware,3.0,86,West
+ORD1045,2026-05-26,Hoodie,Clothing,Topwear,10.0,26,North
+ORD1056,2026-02-03,ThinkPad T14,Electronics,Laptops,5.0,345,West
+ORD1008,2026-04-28,Logitech Mouse,Electronics,Accessories,,790,North
+ORD1019,2026-06-10,iPhone 15,Electronics,Smartphones,13.0,879,North
+ORD1043,2026-01-15,Cast Iron Skillet,Home & Kitchen,Cookware,10.0,137,South
+ORD1075,2026-01-01,Leather Boots,Clothing,Footwear,5.0,68,West
+ORD1029,2026-06-16,Leather Boots,Clothing,Footwear,8.0,147,West
+ORD1040,2026-02-12,Graphic T-Shirt,Clothing,Topwear,1.0,114,East
+ORD1031,2026-01-02,Air Fryer,Home & Kitchen,Appliances,12.0,30,South
+ORD1071,2026-06-20,Graphic T-Shirt,Clothing,Topwear,10.0,95,North
+ORD1072,2026-05-10,Non-Stick Pan,Home & Kitchen,Cookware,11.0,119,East
+ORD1057,2026-05-24,Cast Iron Skillet,Home & Kitchen,Cookware,2.0,34,South
+ORD1027,2026-02-02,AirPods Pro,Electronics,Accessories,11.0,988,South
+ORD1016,2026-04-12,Knife Set,Home & Kitchen,Cookware,,51,East
+ORD1026,2026-03-03,Pixel 8,Electronics,Smartphones,2.0,199,West
+ORD1013,2026-02-11,Blender,Home & Kitchen,Appliances,7.0,84,South
+ORD1034,2026-02-18,Jeans,Clothing,Bottomwear,2.0,125,East
+ORD1001,2026-01-07,Espresso Machine,Home & Kitchen,Appliances,5.0,77,South
+ORD1068,2026-03-30,Knife Set,Home & Kitchen,Cookware,,95,West
+ORD1051,2026-06-30,Leather Boots,Clothing,Footwear,10.0,150,North
+ORD1045,2026-05-26,Hoodie,Clothing,Topwear,10.0,25,South
+ORD1039,2026-02-12,Galaxy S24,Electronics,Smartphones,8.0,1000,South
+ORD1018,2026-02-05,Flannel Shirt,Clothing,Topwear,8.0,38,North
+ORD1063,2026-01-28,Anker Power Bank,Electronics,Accessories,,94,West
+ORD1017,2026-05-24,Pixel 8,Electronics,Smartphones,5.0,892,West
+ORD1052,2026-06-19,Cast Iron Skillet,Home & Kitchen,Cookware,15.0,49,East
+ORD1079,2026-03-04,Galaxy S24,Electronics,Smartphones,10.0,164,West
+ORD1071,2026-06-20,Graphic T-Shirt,Clothing,Topwear,10.0,95,North
+ORD1061,2026-03-02,Air Fryer,Home & Kitchen,Appliances,13.0,60,West
+ORD1076,2026-04-30,Non-Stick Pan,Home & Kitchen,Cookware,8.0,69,West
+ORD1021,2026-06-24,Espresso Machine,Home & Kitchen,Appliances,,83,East
+ORD1038,2026-04-24,Pixel 8,Electronics,Smartphones,2.0,123,North
+ORD1066,2026-06-14,Sweatpants,Clothing,Bottomwear,,99,North
+ORD1065,2026-02-19,Anker Power Bank,Electronics,Accessories,6.0,585,North
+ORD1022,2026-04-22,MacBook Air,Electronics,Laptops,8.0,21,East
+ORD1049,2026-05-25,Running Shoes,Clothing,Footwear,2.0,69,East
+ORD1074,2026-06-23,Knife Set,Home & Kitchen,Cookware,15.0,59,East
+ORD1070,2026-01-01,Knife Set,Home & Kitchen,Cookware,15.0,65,East
+ORD1058,2026-04-05,Espresso Machine,Home & Kitchen,Appliances,9.0,52,West
+ORD1036,2026-03-28,Running Shoes,Clothing,Footwear,4.0,64,South
+ORD1012,2026-02-23,Sweatpants,Clothing,Bottomwear,5.0,33,South
+ORD1032,2026-03-26,iPhone 15,Electronics,Smartphones,9.0,502,East
+ORD1042,2026-02-25,MacBook Air,Electronics,Laptops,10.0,1125,North
+ORD1077,2026-06-18,Air Fryer,Home & Kitchen,Appliances,5.0,146,East
+ORD1080,2026-05-28,Running Shoes,Clothing,Footwear,12.0,113,West
+ORD1060,2026-03-05,Logitech Mouse,Electronics,Accessories,2.0,739,West
+ORD1062,2026-03-27,Galaxy S24,Electronics,Smartphones,13.0,523,East
+ORD1043,2026-01-15,Cast Iron Skillet,Home & Kitchen,Cookware,10.0,137,East
+ORD1035,2026-04-30,Sweatpants,Clothing,Bottomwear,1.0,40,North
+ORD1067,2026-02-15,ThinkPad T14,Electronics,Laptops,5.0,93,North
+ORD1023,2026-05-10,Air Fryer,Home & Kitchen,Appliances,14.0,91,South
+ORD1011,2026-04-08,Galaxy S24,Electronics,Smartphones,8.0,762,North
+ORD1020,2026-06-02,Chino Shorts,Clothing,Bottomwear,9.0,79,North
+ORD1059,2026-03-20,Galaxy S24,Electronics,Smartphones,15.0,96,East
+ORD1012,2026-02-23,Sweatpants,Clothing,Bottomwear,5.0,33,South
+ORD1047,2026-03-22,AirPods Pro,Electronics,Accessories,5.0,825,South
+ORD1056,2026-02-03,ThinkPad T14,Electronics,Laptops,5.0,345,West
+ORD1014,2026-01-15,Cast Iron Skillet,Home & Kitchen,Cookware,14.0,23,East
+ORD1063,2026-01-28,Anker Power Bank,Electronics,Accessories,,94,West
+ORD1054,2026-02-22,Knife Set,Home & Kitchen,Cookware,11.0,82,West
+ORD1002,2026-01-27,Logitech Mouse,Electronics,Accessories,12.0,1131,North
+ORD1044,2026-01-21,AirPods Pro,Electronics,Accessories,2.0,154,South
+ORD1056,2026-02-03,ThinkPad T14,Electronics,Laptops,5.0,345,West
+ORD1065,2026-02-19,Anker Power Bank,Electronics,Accessories,6.0,585,North
+ORD1009,2026-06-10,Knife Set,Home & Kitchen,Cookware,15.0,107,South
+ORD1048,2026-04-28,Non-Stick Pan,Home & Kitchen,Cookware,,33,North
+ORD1069,2026-04-09,Espresso Machine,Home & Kitchen,Appliances,,80,North
+ORD1055,2026-01-24,Flannel Shirt,Clothing,Topwear,7.0,85,North
+ORD1069,2026-04-09,Espresso Machine,Home & Kitchen,Appliances,,80,North
+ORD1045,2026-05-26,Hoodie,Clothing,Topwear,10.0,25,North
+ORD1006,2026-02-09,Jeans,Clothing,Bottomwear,13.0,101,North
+ORD1073,2026-03-17,White Sneakers,Clothing,Footwear,3.0,64,West

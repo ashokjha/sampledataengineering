@@ -4,6 +4,9 @@ import pandas as pd
 class StockDataValidator(DataValidator):
     """ Stock Data Validator
     """
+    def __init__(self):
+        super().__init__()
+        
     def validate(self, data: pd.DataFrame) -> bool:
         """validate Data
         Args:

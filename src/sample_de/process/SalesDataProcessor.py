@@ -55,12 +55,15 @@ class SalesDataProcessor(BaseDataProcessor):
 if __name__ == "__main__" :
     # below import required in main only
     from sample_de.data.SalesDataCreator import SalesDataCreator
+    from sample_de.validator.EcomSalesDataValidator import EcomSalesDataValidator
     from sample_de.clean.SalesDataCleaner import SalesDataCleaner
      
     salesDataCreator = SalesDataCreator()
-    data = salesDataCreator.create_data('data/sample_Stock_remove.csv')
+    data = salesDataCreator.create('data/sample_Stock_remove.csv')
+    ecdvalidator = EcomSalesDataValidator()
+    ecdvalidator.validate(data)    
     sdc = SalesDataCleaner()
-    sdc.clean_data(data)
+    sdc.clean(data)
     sdp = SalesDataProcessor()
     sdp.process(data)
     

@@ -9,7 +9,7 @@ class StockDataCleaner(BaseDataCleaner):
     def __init__(self):
         super().__init__()
     
-    def clean_data(self, data: pd.DataFrame) -> pd.DataFrame:
+    def clean(self, data: pd.DataFrame) -> pd.DataFrame:
         """To clean data
         Args:
             dataFrame: Panda DataFrame
@@ -22,9 +22,12 @@ class StockDataCleaner(BaseDataCleaner):
         
 if __name__ == "__main__" :
     from sample_de.data.StockDataCreator import StockDataCreator
+    from sample_de.validator.StockDataValidator import StockDataValidator
     stockDataCreator = StockDataCreator()
-    data = stockDataCreator.create_data('data/sampleStock.csv')
+    data = stockDataCreator.create('data/sampleStock.csv')
+    sdvalidator = StockDataValidator()
+    sdvalidator.validate(data)
     stockDataCleaner = StockDataCleaner()
-    print(stockDataCleaner.clean_data(data), end="\n")
+    print(stockDataCleaner.clean(data), end="\n")
     
      

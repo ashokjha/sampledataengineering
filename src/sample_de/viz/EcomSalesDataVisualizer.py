@@ -34,7 +34,7 @@ class EcomSalesDataVisualizer(DataVisualizer):
         Returns:
             None:
         """
-        logging.info("Visualizations (Creating Charts) ---")
+        logging.info("Visualizations E-commerce Sales ---")
         # setting: Charts to look nice set Seaborn style
         sns.set_theme(style=self.reportTheme)
         self.monthlySalesTrendAndPriceDist(data)
@@ -74,7 +74,6 @@ class EcomSalesDataVisualizer(DataVisualizer):
          # -------------------------------------------------------------
         # Char 2: Box Plot - Price Distribution across Category & Subcategory
         # -------------------------------------------------------------
-        print("Creating box plot...")
         # Set the Sales Value according to 'Full_Category' to sort the values for proper display in the boxplot
         df_sorted = data.sort_values("Category")
         sns.boxplot(
@@ -96,7 +95,9 @@ class EcomSalesDataVisualizer(DataVisualizer):
         # Adjust layout to prevent overlapping
         plt.tight_layout()
         # Save the figure to a file
-        plt.savefig(os.path.join(self.chartsPath, f"sales_visualizations_{self.langLocal}.png"))
+        chartPath = os.path.join(self.chartsPath, f"sales_visualizations_{self.langLocal}.png")
+        plt.savefig(chartPath)
+        logging.info(f"Visualization saved to {chartPath}")
         # plt.show()       
             
     
@@ -148,8 +149,9 @@ class EcomSalesDataVisualizer(DataVisualizer):
 
         # Adjust layout to prevent overlapping
         plt.tight_layout()
-        plt.savefig(os.path.join(self.chartsPath, f"sales_visualizations_category_{self.langLocal}.png"))
-        print(f"Visualization saved as sales_visualizations_category_{self.langLocal}.png => " + self.langLocal)
+        chartPath = os.path.join(self.chartsPath, f"sales_visualizations_category_{self.langLocal}.png")
+        plt.savefig(chartPath)
+        logging.info(f"Visualization saved ijn {chartPath} ")
         # Show the charts on the screen
         #plt.show()
         
@@ -157,13 +159,16 @@ class EcomSalesDataVisualizer(DataVisualizer):
 if __name__ == "__main__" :
     # below import required in main only
     from sample_de.data.SalesDataCreator import SalesDataCreator
+    from sample_de.validator.EcomSalesDataValidator import EcomSalesDataValidator
     from sample_de.clean.SalesDataCleaner import SalesDataCleaner
     from sample_de.process.SalesDataProcessor import SalesDataProcessor
      
     salesDataCreator = SalesDataCreator()
-    data = salesDataCreator.create_data('data/sample_Stock_remove.csv')
+    data = salesDataCreator.create('data/sample_Stock_remove.csv')
     sdc = SalesDataCleaner()
-    sdc.clean_data(data)
+    ecdvalidator = EcomSalesDataValidator()
+    ecdvalidator.validate(data)   
+    sdc.clean(data)
     sdp = SalesDataProcessor()
     sdp.process(data) 
     esdv = EcomSalesDataVisualizer()

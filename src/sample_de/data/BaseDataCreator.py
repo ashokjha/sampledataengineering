@@ -9,7 +9,7 @@ class BaseDataCreator(ABC):
     """Base interface to create data
     """
     @abstractmethod
-    def create_data(self, path: str) -> pd.DataFrame:
+    def create(self, path: str) -> pd.DataFrame:
         """To Read or create Data
         Args:
             path (str): Data Path

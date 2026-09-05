@@ -25,12 +25,15 @@ class StockDataProcessor(BaseDataProcessor):
         
 if __name__ == "__main__" :
     from sample_de.data.StockDataCreator import StockDataCreator
+    from sample_de.validator.StockDataValidator import StockDataValidator
     from sample_de.clean.StockDataCleaner import StockDataCleaner
     
     stockDataCreator = StockDataCreator()
-    data = stockDataCreator.create_data('data/sampleStock.csv')
+    data = stockDataCreator.create('data/sampleStock.csv')
+    sdvalidator = StockDataValidator()
+    sdvalidator.validate(data)  
     stockDataCleaner = StockDataCleaner()
-    print(stockDataCleaner.clean_data(data), end="\n")
+    print(stockDataCleaner.clean(data), end="\n")
     sdp = StockDataProcessor()
     sdp.process(data)
     

@@ -10,7 +10,6 @@ class systemvariablemanager:
     _instance = None  # Stores the single instance
     def __new__(cls, *args, **kwargs):
         if cls._instance is None:
-            print("🔄 [SYSTEM] Creating a new instance of systemvariablemanager.")
             # Create the instance if it doesn't exist yet
             cls._instance = super().__new__(cls)
             load_dotenv()  # Load environment variables from .env file

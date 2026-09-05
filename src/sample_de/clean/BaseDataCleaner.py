@@ -9,7 +9,7 @@ class BaseDataCleaner(ABC):
     """Base interface to clean data
     """
     @abstractmethod
-    def clean_data(self, data: pd.DataFrame) -> pd.DataFrame:
+    def clean(self, data: pd.DataFrame) -> pd.DataFrame:
         """To clean data
         Args:
             dataFrame: Panda DataFrame

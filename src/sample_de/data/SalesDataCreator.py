@@ -10,7 +10,7 @@ class SalesDataCreator(BaseDataCreator):
     def __init__(self):
         super().__init__()
     
-    def create_data(self, dataset_path) -> pd.DataFrame:
+    def create(self, dataset_path) -> pd.DataFrame:
         """This will fetch or generate raw sales data"""
         if dataset_path is None or dataset_path.strip() == "":
             raise ValueError("DATASET is Null/empty.")      
@@ -88,6 +88,5 @@ class SalesDataCreator(BaseDataCreator):
         return df
         
 if __name__ == "__main__" :
-    salesDataCreator = SalesDataCreator()
-    salesDataCreator.create_data('data/sample_ecommerce_sales_remove.csv')
-     
+    sdCreator = SalesDataCreator()
+    sdCreator.create('data/sample_ecommerce_sales_remove.csv')

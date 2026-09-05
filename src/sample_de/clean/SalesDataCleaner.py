@@ -15,7 +15,7 @@ class SalesDataCleaner(BaseDataCleaner):
     def __init__(self):
         super().__init__()
     
-    def clean_data(self, df: pd.DataFrame) -> pd.DataFrame:
+    def clean(self, df: pd.DataFrame) -> pd.DataFrame:
         """To clean data
         Args:
             dataFrame: Panda DataFrame
@@ -43,12 +43,15 @@ class SalesDataCleaner(BaseDataCleaner):
         
 if __name__ == "__main__" :
     from sample_de.data.SalesDataCreator import SalesDataCreator
+    from sample_de.validator.EcomSalesDataValidator import EcomSalesDataValidator
     salesDataCreator = SalesDataCreator()
-    data = salesDataCreator.create_data('data/sample_Stock_remove.csv')
-    sdc = SalesDataCleaner()
+    data = salesDataCreator.create('data/sample_Stock_remove.csv')
+    ecdvalidator = EcomSalesDataValidator()
+    ecdvalidator.validate(data)
+    sdcleaner = SalesDataCleaner()
     print(f"original date shape: {data.shape}", end="\n")
     #kept if implementation does not do inpllace cleaning
-    cleanedData = sdc.clean_data(data)
+    cleanedData = sdcleaner.clean(data)
     print(f"cleaned data shape : {cleanedData.shape}", end="\n")
     print(f"original date shape: {data.shape}", end="\n")      
     #print(f"cleaned data shape {cleanedData}}, end="\n")

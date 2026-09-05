@@ -12,7 +12,7 @@ class StockDataCreator(BaseDataCreator):
     def __init__(self):
         super().__init__()
     
-    def create_data(self, dataset_path:str) -> pd.DataFrame:
+    def create(self, dataset_path:str) -> pd.DataFrame:
         """
         Creates a test stock dataset and saves it to a {dataset_path} file.
         Parameters:
@@ -53,5 +53,5 @@ class StockDataCreator(BaseDataCreator):
         
 if __name__ == "__main__" :
     stockDataCreator = StockDataCreator()
-    stockDataCreator.create_data('data/sample_Stock_remove.csv')
+    stockDataCreator.create('data/sample_Stock_remove.csv')
      
