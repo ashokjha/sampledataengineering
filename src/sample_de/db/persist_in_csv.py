@@ -1,5 +1,3 @@
-
-
 import logging
 
 
@@ -27,4 +25,3 @@ class persist_in_csv:
             self.logger.info("Data persisted to CSV at: %s", file_path)
         except Exception as e:
             self.logger.error("Error persisting data to CSV: %s", e)
-    

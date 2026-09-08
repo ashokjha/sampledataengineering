@@ -1,14 +1,15 @@
-
 import locale
 import os
+
 
 class common_util:
     """
     commonUtil is a utility class that provides common functionalities for the application.
     Returns:
-        _type_: CommonUtil: A utility class providing common functionalities 
+        _type_: CommonUtil: A utility class providing common functionalities
         such as retrieving the system's language locale and determining the chart storage path.
     """
+
     @staticmethod
     def getLangLocal():
         """
@@ -29,4 +30,3 @@ class common_util:
         chartPath = os.getenv("VISUALIZATION_PATH", "charts")
         os.makedirs(chartPath, exist_ok=True)
         return chartPath
-    

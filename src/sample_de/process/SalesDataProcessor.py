@@ -12,16 +12,15 @@ class SalesDataProcessor(BaseDataProcessor):
     Args:
         BaseDataProcessor (_type_): _description_
     """
-    
+
     def __init__(self):
         super().__init__()
         self.envreader = systemvariablemanager()
-    
-    
+
     def process(self, data: pd.DataFrame) -> pd.DataFrame:
         """Process Sales Data
         Args:
-            data(pd.DataFrame): 
+            data(pd.DataFrame):
 
         Returns:
             processedData(pd.DataFrame):
@@ -48,24 +47,22 @@ class SalesDataProcessor(BaseDataProcessor):
         )
         logging.info("Product-wise Quantity Sold:")
         logging.info(product_qty)
-        persistInCSV=persist_in_csv()
+        persistInCSV = persist_in_csv()
         persistInCSV.persist(data, self.envreader.get_env("CLEANED_ESALES_DATASET"))
         return data
-        
-if __name__ == "__main__" :
+
+
+if __name__ == "__main__":
     # below import required in main only
     from sample_de.data.SalesDataCreator import SalesDataCreator
     from sample_de.validator.EcomSalesDataValidator import EcomSalesDataValidator
     from sample_de.clean.SalesDataCleaner import SalesDataCleaner
-     
+
     salesDataCreator = SalesDataCreator()
-    data = salesDataCreator.create('data/sample_Stock_remove.csv')
+    data = salesDataCreator.create("data/sample_Stock_remove.csv")
     ecdvalidator = EcomSalesDataValidator()
-    ecdvalidator.validate(data)    
+    ecdvalidator.validate(data)
     sdc = SalesDataCleaner()
     sdc.clean(data)
     sdp = SalesDataProcessor()
     sdp.process(data)
-    
-    
-     

@@ -4,6 +4,7 @@ from sample_de.db.persist_in_csv import persist_in_csv
 from sample_de.utils.create_data import sample_data_creator
 from sample_de.process.clean_data import clean_data
 
+
 class process_data:
     """
     A class to process cleaned e-commerce sales data.
@@ -31,14 +32,16 @@ class process_data:
         if self.data is None or self.data.empty:
             logging.info("Input data is empty. Returning empty list.")
             return [], []
-        
+
         # Total Revenue calculation
         self.data["Total_Sales"] = self.data["Quantity"] * self.data["Price_Per_Unit"]
 
         # Month extraction from the 'Date' column
         self.data["Month"] = self.data["Date"].dt.strftime("%b")  # e.g.: Jan, Feb, Mar
         logging.info("Data processing completed.")
-        self.data["Full_Category"] = self.data["Category"] + " -> " + self.data["Subcategory"]
+        self.data["Full_Category"] = (
+            self.data["Category"] + " -> " + self.data["Subcategory"]
+        )
 
         # --- Data Analysis and Aggregation ---
         logging.info("--- Data Analysis and Summary ---")
@@ -46,27 +49,29 @@ class process_data:
         # a) How many units were sold?
         grand_total = self.data["Total_Sales"].sum()
         logging.info(f"Grand Total (Total Revenue): ${grand_total:,}")
-        
+
         # b) How much revenue came from each category?
-        #category_sales = self.data.groupby("Category")["Total_Sales"].sum().reset_index()
-        #logging.info("Category-wise Sales:")
-        #logging.info(category_sales)
+        # category_sales = self.data.groupby("Category")["Total_Sales"].sum().reset_index()
+        # logging.info("Category-wise Sales:")
+        # logging.info(category_sales)
         # c) Which product had the highest quantity sold?
         product_qty = (
             self.data.groupby("Product")["Quantity"].sum().sort_values(ascending=False)
         )
         logging.info("Product-wise Quantity Sold:")
         logging.info(product_qty)
-        persistInCSV=persist_in_csv()
-        persistInCSV.persist(self.data, self.envreader.get_env("CLEANED_DATASET_SUBCAT"))
+        persistInCSV = persist_in_csv()
+        persistInCSV.persist(
+            self.data, self.envreader.get_env("CLEANED_DATASET_SUBCAT")
+        )
         return self.data
 
     def process_data_category(self):
         """
         Process the input data and return the processed data.
-        
+
         Args:
-            None.    
+            None.
 
         Returns:
             list: A list of dictionaries representing the processed data.
@@ -75,7 +80,7 @@ class process_data:
         if self.data is None or self.data.empty:
             logging.info("Input data is empty. Returning empty list.")
             return [], []
-        
+
         # Total Revenue calculation
         self.data["Total_Sales"] = self.data["Quantity"] * self.data["Price_Per_Unit"]
 
@@ -89,9 +94,11 @@ class process_data:
         # a) How many units were sold?
         grand_total = self.data["Total_Sales"].sum()
         logging.info(f"Grand Total (Total Revenue): ${grand_total:,}")
-        
+
         # b) How much revenue came from each category?
-        category_sales = self.data.groupby("Category")["Total_Sales"].sum().reset_index()
+        category_sales = (
+            self.data.groupby("Category")["Total_Sales"].sum().reset_index()
+        )
         logging.info("Category-wise Sales:")
         logging.info(category_sales)
         # c) Which product had the highest quantity sold?
@@ -102,19 +109,20 @@ class process_data:
         logging.info(product_qty)
         persistData = persist_in_csv()
         persistData.persist(self.data, self.envreader.get_env("CLEANED_DATASET"))
-        #self.data.to_csv(oself.envreader.get_env("CLEANED_DATASET"), index=False)
+        # self.data.to_csv(oself.envreader.get_env("CLEANED_DATASET"), index=False)
         return self.data, category_sales
-    
+
     def __str__(self):
         return f"process_data(data={self.data.shape[0]} rows)"
-    
+
     def __repr__(self):
         return f"process_data(data={self.data.shape[0]} rows)"
-    
+
 
 if __name__ == "__main__":
     import os
     from dotenv import load_dotenv
+
     load_dotenv()
     # Create a sample dataset for testing purposes
     # Example usage

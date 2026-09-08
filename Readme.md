@@ -1,6 +1,7 @@
 # Sample Data Engineering
 
 * **Create and activate virtual environment:**
+
   ```bash
   python -m venv .deenv
   .deenv\bin\activate.ps1  # Windows PowerShell
@@ -10,24 +11,31 @@
   pip freeze > requirements.txt
   #deactivate environment if required
   deactivate
+  # format
+   black .
   ```
 * **Install dependencies:**
+
   ```bash
   pip install dotenv pandas matplotlib seaborn
   ```
 * Freeze Requirement
+
   ```bash
   pip freeze > requirements.txt
   ```
 * Install  Requirement
+
   ```bash
   pip install -r requirements.txt
   ```
 * Execute
+
   ```bash
   <Project Root>/python src/sample_de/dodo.py
   ```
 * Example
+
   - <p align="center">
     <img src="./charts/sales_visualizations_category_en.png" width="100%" alt="Sales category performance">
 

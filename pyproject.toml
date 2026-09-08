@@ -11,3 +11,21 @@ requires-python = ">=3.8"
 
 [tool.setuptools.packages.find]
 where = ["src"]  # this is the directory where your package code is located
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.deenv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''

@@ -11,17 +11,17 @@ products = {
     "Electronics": {
         "Smartphones": ["iPhone 15", "Galaxy S24", "Pixel 8"],
         "Laptops": ["MacBook Air", "Dell XPS 13", "ThinkPad T14"],
-        "Accessories": ["AirPods Pro", "Anker Power Bank", "Logitech Mouse"]
+        "Accessories": ["AirPods Pro", "Anker Power Bank", "Logitech Mouse"],
     },
     "Clothing": {
         "Topwear": ["Hoodie", "Graphic T-Shirt", "Flannel Shirt"],
         "Bottomwear": ["Jeans", "Chino Shorts", "Sweatpants"],
-        "Footwear": ["Running Shoes", "Leather Boots", "White Sneakers"]
+        "Footwear": ["Running Shoes", "Leather Boots", "White Sneakers"],
     },
     "Home & Kitchen": {
         "Appliances": ["Air Fryer", "Blender", "Espresso Machine"],
-        "Cookware": ["Cast Iron Skillet", "Non-Stick Pan", "Knife Set"]
-    }
+        "Cookware": ["Cast Iron Skillet", "Non-Stick Pan", "Knife Set"],
+    },
 }
 regions = ["North", "South", "East", "West"]
 start_date = datetime(2026, 1, 1)
@@ -32,17 +32,25 @@ base_data = []
 for i in range(1, 81):
     category = random.choice(list(products.keys()))
     subcategory = random.choice(list(products[category].keys()))
-    
-    base_data.append({
-        "Order_ID": f"ORD{1000 + i}",
-        "Date": (start_date + timedelta(days=random.randint(0, 180))).strftime("%Y-%m-%d"),
-        "Product": random.choice(products[category][subcategory]),
-        "Category": category,
-        "Subcategory": subcategory,
-        "Quantity": random.randint(1, 15),
-        "Price_Per_Unit": random.randint(15, 1200) if category == "Electronics" else random.randint(15, 150),
-        "Region": random.choice(regions)
-    })
+
+    base_data.append(
+        {
+            "Order_ID": f"ORD{1000 + i}",
+            "Date": (start_date + timedelta(days=random.randint(0, 180))).strftime(
+                "%Y-%m-%d"
+            ),
+            "Product": random.choice(products[category][subcategory]),
+            "Category": category,
+            "Subcategory": subcategory,
+            "Quantity": random.randint(1, 15),
+            "Price_Per_Unit": (
+                random.randint(15, 1200)
+                if category == "Electronics"
+                else random.randint(15, 150)
+            ),
+            "Region": random.choice(regions),
+        }
+    )
 
 # 2. Add 10 exact duplicate rows
 exact_duplicates = random.choices(base_data, k=10)
