@@ -6,6 +6,7 @@ import plotly.express as px
 
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
+from poc.data.DataCreator import DataCreator
 
 
 class RelationEngine(BaseChartEngine):
@@ -22,21 +23,8 @@ class RelationEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         np.random.seed(10)
-        self.df = self.get_sample_data()
+        self.df = DataCreator.relationalData()
         self.charts = []
-
-    def get_sample_data(self) -> pd.DataFrame:
-        np.random.seed(10)
-        dates = pd.date_range(start="2026-01-01", periods=60)
-        df = pd.DataFrame(
-            {
-                "Date": dates,
-                "Metric_A": np.cumsum(np.random.normal(loc=0.5, scale=2, size=60)) + 50,
-                "Metric_B": np.cumsum(np.random.normal(loc=0.3, scale=1.5, size=60))
-                + 30,
-            }
-        )
-        return df
 
     def render_all(self) -> list[dict]:
         # 1: Line Chart

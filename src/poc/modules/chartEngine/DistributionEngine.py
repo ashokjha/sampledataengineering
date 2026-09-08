@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
+from poc.data.DataCreator import DataCreator
 
 
 class DistributionEngine(BaseChartEngine):
@@ -21,16 +22,8 @@ class DistributionEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         np.random.seed(50)
-        self.df = self.get_sample_data()
+        self.df = DataCreator.distributionData()
         self.charts = []
-
-    def get_sample_data(self):
-        np.random.seed(42)
-        data = {
-            "Value": np.random.normal(loc=50, scale=10, size=500),
-            "Category": np.random.choice(["Group A", "Group B", "Group C"], size=500),
-        }
-        return pd.DataFrame(data)
 
     def render_all(self) -> list[dict]:
         self.render_histogram(self.df, "Value")

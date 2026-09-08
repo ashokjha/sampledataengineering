@@ -5,6 +5,7 @@ import pandas as pd
 import numpy as np
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
+from poc.data.DataCreator import DataCreator
 
 
 class MatrixEngine(BaseChartEngine):
@@ -20,25 +21,7 @@ class MatrixEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         self.charts = []
-        self.df_matrix, self.df_flow = self.get_sample_data()
-
-    def get_sample_data(self) -> tuple[pd.DataFrame, pd.DataFrame]:
-
-        np.random.seed(42)
-        # Create a correlation-like matrix dataset
-        data = np.random.rand(5, 5)
-        cols = ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"]
-        df_matrix = pd.DataFrame(data, columns=cols, index=cols)
-
-        # Long-form data for flow/relationship visualizations
-        df_flow = pd.DataFrame(
-            {
-                "Source": ["A", "A", "B", "B", "C"],
-                "Target": ["X", "Y", "X", "Z", "Y"],
-                "Value": [10, 20, 15, 5, 25],
-            }
-        )
-        return df_matrix, df_flow
+        self.df_matrix, self.df_flow = DataCreator.matrixAndRelationData()
 
     def render_all(self) -> list[dict]:
         self.heatMap()

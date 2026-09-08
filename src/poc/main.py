@@ -3,13 +3,9 @@ import streamlit as st
 from dotenv import load_dotenv
 
 
-from poc.modules.chartEngine.DistributionEngine import DistributionEngine
-from poc.modules.chartEngine.RelationalEngine import RelationEngine
-from poc.modules.chartEngine.ThreeDChartsEngine import ThreeDChartEngine
-from poc.modules.chartEngine.CategoricalEngine import CategoricalEngine
-from poc.modules.chartEngine.MatrixEngine import MatrixEngine
-from poc.modules.chartEngine.PartToWholeEngine import PartToWholeEngine
-from poc.modules.chartEngine.GeospatialEngine import GeospatialEngine
+from poc.modules.enum.ChartEnum import ChartType, DisplayMode
+
+from poc.modules.router.EngineRouter import get_engine_router
 from poc.exporter.PdfExporter import PdfExporter
 from poc.modules.loader.WIP import Loader
 
@@ -29,32 +25,26 @@ class Dashboard:
         category = st.sidebar.selectbox(
             "Select Category",
             [
-                "Distribution Engine",
-                "Relational Engine",
-                "3D Engine",
-                "Matrix And Relationship Engine",
-                "Part-To-Whole Engine",
-                "Geo Spatial Engine",
+                ChartType.DISTRIBUTION.value,
+                ChartType.RELATIONAL.value,
+                ChartType.CATEGORIOCAL.value,
+                ChartType.THREED.value,
+                ChartType.MATRIX.value,
+                ChartType.PART2WHOLE.value,
+                ChartType.GEO.value,
             ],
         )
         view_mode = st.sidebar.radio(
-            "व्New Mode", ["Side-by-Side", "Interactive Only", "Static Only"]
+            "Display Mode",
+            [
+                DisplayMode.BOTH.value,
+                DisplayMode.INTERCTIVE.value,
+                DisplayMode.STATIC.value,
+            ],
         )
 
         # 3. Routing
-        match category:
-            case "Distribution Engine":
-                engine = DistributionEngine()
-            case "Relational Engine":
-                engine = RelationEngine()
-            case "3D Engine":
-                engine = ThreeDChartEngine()
-            case "Matrix And Relationship Engine":
-                engine = MatrixEngine()
-            case "Part-To-Whole Engine":
-                engine = PartToWholeEngine()
-            case "Geo Spatial Engine":
-                engine = GeospatialEngine()
+        engine = get_engine_router(category)
 
         # Active Charts
         active_charts = engine.render_all()

@@ -6,6 +6,7 @@ import numpy as np
 
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
+from poc.data.DataCreator import DataCreator
 
 
 class GeospatialEngine(BaseChartEngine):
@@ -20,18 +21,7 @@ class GeospatialEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         self.charts = []
-        self.df = self.get_sample_data()
-
-    def get_sample_data(self) -> pd.DataFrame:
-        df = pd.DataFrame(
-            {
-                "City": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"],
-                "Lat": [40.7128, 34.0522, 41.8781, 29.7604, 33.4484],
-                "Lon": [-74.0060, -118.2437, -87.6298, -95.3698, -112.0740],
-                "Population_Scale": [83, 39, 27, 23, 16],
-            }
-        )
-        return df
+        self.df = DataCreator.spatialData()
 
     def render_all(self) -> list[dict]:
         self.scatter_map_or_geo_plot()
