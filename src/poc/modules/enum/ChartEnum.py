@@ -9,6 +9,7 @@ class ChartType(StrEnum):
     MATRIX = "Matrix And Relationship Engine"
     PART2WHOLE = "Part-To-Whole Engine"
     GEO = "Geo Spatial Engine"
+    FINANCIAL = "Financial"
 
 
 class DisplayMode(StrEnum):

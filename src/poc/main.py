@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 
 from poc.modules.enum.ChartEnum import ChartType, DisplayMode
 
-from poc.modules.router.EngineRouter import get_engine_router
-from poc.exporter.PdfExporter import PdfExporter
-from poc.modules.loader.WIP import Loader
+from poc.modules.chartEngine import get_chart_engine
+from poc.exporter import PdfExporter
+from poc.modules.loader import Loader
 
 
 class Dashboard:
@@ -32,6 +32,7 @@ class Dashboard:
                 ChartType.MATRIX.value,
                 ChartType.PART2WHOLE.value,
                 ChartType.GEO.value,
+                ChartType.FINANCIAL.value,
             ],
         )
         view_mode = st.sidebar.radio(
@@ -44,25 +45,35 @@ class Dashboard:
         )
 
         # 3. Routing
-        engine = get_engine_router(category)
+        engine = get_chart_engine(category)
 
         # Active Charts
         active_charts = engine.render_all()
 
         for index, chart in enumerate(active_charts):
             st.header(f"{index + 1}. {chart['title']}")
-            if view_mode == "Side-by-Side":
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.pyplot(chart["static"])
-                with col2:
-                    st.plotly_chart(chart["interactive"], use_container_width=True)
-            elif view_mode == "Interactive Only":
-                st.plotly_chart(chart["interactive"], use_container_width=True)
-            else:
-                st.pyplot(chart["static"])
+            match (view_mode):
+                case DisplayMode.BOTH:
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        if hasattr(chart["static"], "savefig") == True:
+                            st.pyplot(chart["static"])
+                        else:
+                            st.plotly_chart(chart["static"], width="stretch")
+                    with col2:
+                        st.plotly_chart(chart["interactive"], width="stretch")
+
+                case DisplayMode.INTERCTIVE:
+                    st.plotly_chart(chart["interactive"], width="stretch")
+
+                case __:
+                    if hasattr(chart["static"], "savefig") == True:
+                        st.pyplot(chart["static"])
+                    else:
+                        st.plotly_chart(chart["static"], width="stretch")
 
             st.divider()
+
         # download Report
         exporter = PdfExporter()
         reportPath = os.path.join(

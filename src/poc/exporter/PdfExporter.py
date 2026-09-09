@@ -54,9 +54,10 @@ class PdfExporter:
         saved_paths = []
         for chart in reports:
             file_path = os.path.join(reportLocation, f"{chart['name']}_static.pdf")
-            chart["static"].savefig(
-                file_path, format="pdf", bbox_inches="tight", dpi=300
-            )
+            if hasattr(chart["static"], "savefig") == True:
+                chart["static"].savefig(file_path, format="pdf")
+            else:
+                chart["static"].write_image(file_path, format="pdf")
             saved_paths.append(file_path)
             file_path = os.path.join(reportLocation, f"{chart['name']}_interactive.pdf")
 

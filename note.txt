@@ -1,0 +1,12 @@
+Create directory and file:
+   mkdir -p .streamlit && touch .streamlit/config.toml
+
+format project
+black .
+
+
+Update Readme:
+python src/sample_de/utils/UpdateReadme.py
+
+run streamlit
+streamlit run  src/poc/main.py

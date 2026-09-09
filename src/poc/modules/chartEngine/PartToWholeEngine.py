@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data.DataCreator import DataCreator
+from poc.data import DataCreator
 
 
 class PartToWholeEngine(BaseChartEngine):

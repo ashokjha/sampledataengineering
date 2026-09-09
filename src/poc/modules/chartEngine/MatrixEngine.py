@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data.DataCreator import DataCreator
+from poc.data import DataCreator
 
 
 class MatrixEngine(BaseChartEngine):

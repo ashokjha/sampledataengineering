@@ -73,7 +73,7 @@ class DataCreator:
         return df
 
     @staticmethod
-    def matrixAndRelationData() -> (pd.DataFrame, pd.DataFrame):
+    def matrixAndRelationData() -> tuple[pd.DataFrame, pd.DataFrame]:
         np.random.seed(42)
         # Create a correlation-like matrix dataset
         data = np.random.rand(5, 5)
@@ -91,7 +91,7 @@ class DataCreator:
         return df_matrix, df_flow
 
     @staticmethod
-    def categoricalData() -> [pd.DataFrame, pd.DataFrame]:
+    def categoricalData() -> tuple[pd.DataFrame, pd.DataFrame]:
         df = pd.DataFrame(
             {
                 "Quarter": ["Q", "Q", "Q", "Q"] * 2,

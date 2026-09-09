@@ -21,6 +21,15 @@
 * 📁 **3D**
   * 📄 [3D Scatter Interactive](../../reports/3D/3D%20Scatter_interactive.pdf)
   * 📄 [3D Scatter Static](../../reports/3D/3D%20Scatter_static.pdf)
+* 📁 **Categorical**
+  * 📄 [Bar Chart Interactive](../../reports/Categorical/Bar%20Chart_interactive.pdf)
+  * 📄 [Bar Chart Static](../../reports/Categorical/Bar%20Chart_static.pdf)
+  * 📄 [Lollipop Chart Interactive](../../reports/Categorical/Lollipop%20Chart_interactive.pdf)
+  * 📄 [Lollipop Chart Static](../../reports/Categorical/Lollipop%20Chart_static.pdf)
+  * 📄 [Radar Chart Interactive](../../reports/Categorical/Radar%20Chart_interactive.pdf)
+  * 📄 [Radar Chart Static](../../reports/Categorical/Radar%20Chart_static.pdf)
+  * 📄 [Stsacked Bar Chart Interactive](../../reports/Categorical/Stsacked%20Bar%20Chart_interactive.pdf)
+  * 📄 [Stsacked Bar Chart Static](../../reports/Categorical/Stsacked%20Bar%20Chart_static.pdf)
 * 📁 **Distribution**
   * 📄 [1 Histogram Interactive](../../reports/Distribution/1_histogram_interactive.pdf)
   * 📄 [1 Histogram Static](../../reports/Distribution/1_histogram_static.pdf)
@@ -34,6 +43,9 @@
   * 📄 [5 Stripplot Static](../../reports/Distribution/5_stripplot_static.pdf)
   * 📄 [6 Errorbar Interactive](../../reports/Distribution/6_errorbar_interactive.pdf)
   * 📄 [6 Errorbar Static](../../reports/Distribution/6_errorbar_static.pdf)
+* 📁 **Financial**
+  * 📄 [Market Analytics Interactive](../../reports/Financial/Market%20Analytics_interactive.pdf)
+  * 📄 [Market Analytics Static](../../reports/Financial/Market%20Analytics_static.pdf)
 * 📁 **Geo Spatial**
   * 📄 [Scatter Map Or Geo Plot Interactive](../../reports/Geo_Spatial/Scatter%20Map%20or%20Geo-Plot_interactive.pdf)
   * 📄 [Scatter Map Or Geo Plot Static](../../reports/Geo_Spatial/Scatter%20Map%20or%20Geo-Plot_static.pdf)

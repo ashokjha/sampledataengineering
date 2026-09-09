@@ -1,5 +1,6 @@
 import os
 from urllib.parse import quote
+from dotenv import load_dotenv
 
 # Configuration
 DOCUMENTS_DIR = "reports"
