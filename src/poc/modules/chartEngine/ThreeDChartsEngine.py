@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import plotly.express as px
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class ThreeDChartEngine(BaseChartEngine):
@@ -20,7 +20,8 @@ class ThreeDChartEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         self.charts = []
-        self.df = DataCreator.threeDdata()
+        self.dce = DataConfigEngine()
+        self.df = self.dce.fetchData("3D")
 
     def render_all(self) -> list[dict]:
         # 1. 3D Scatter

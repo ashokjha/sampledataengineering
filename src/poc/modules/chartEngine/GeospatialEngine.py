@@ -6,7 +6,7 @@ import numpy as np
 
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class GeospatialEngine(BaseChartEngine):
@@ -21,7 +21,8 @@ class GeospatialEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         self.charts = []
-        self.df = DataCreator.spatialData()
+        self.dce = DataConfigEngine()
+        self.df = self.dce.fetchData("Geo-spatial")
 
     def render_all(self) -> list[dict]:
         self.scatter_map_or_geo_plot()

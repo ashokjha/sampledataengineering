@@ -41,9 +41,7 @@ class systemvariablemanager:
 
 
 if __name__ == "__main__":
-    print("--- सभी एनवायरनमेंट वेरिएबल्स (Dictionary) ---")
     envVar = systemvariablemanager()
     all_vars = envVar.get_all_env_variables()
-    # साफ-सुथरे तरीके (Formatted JSON Layout) से प्रिंट करने के लिए:
     print(all_vars)
     print(envVar.get_env("PALETTE", 123))

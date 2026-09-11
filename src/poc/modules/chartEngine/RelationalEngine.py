@@ -6,7 +6,7 @@ import plotly.express as px
 
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class RelationEngine(BaseChartEngine):
@@ -22,8 +22,8 @@ class RelationEngine(BaseChartEngine):
 
     def __init__(self):
         super().__init__()
-        np.random.seed(10)
-        self.df = DataCreator.relationalData()
+        self.dce = DataConfigEngine()
+        self.df = self.dce.fetchData("Relational")
         self.charts = []
 
     def render_all(self) -> list[dict]:

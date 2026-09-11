@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class MatrixEngine(BaseChartEngine):
@@ -21,7 +21,8 @@ class MatrixEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         self.charts = []
-        self.df_matrix, self.df_flow = DataCreator.matrixAndRelationData()
+        self.dce = DataConfigEngine()
+        self.df_matrix, self.df_flow = self.dce.fetchData("Matrix")
 
     def render_all(self) -> list[dict]:
         self.heatMap()

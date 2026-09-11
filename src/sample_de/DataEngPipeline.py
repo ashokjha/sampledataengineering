@@ -30,7 +30,6 @@ class DataEnggPipeline:
             visualizer (DataVisualizer): _description_
         """
         self.dataPath = path
-        print(f"const datasetPath-> {self.dataPath}")
         self.creator = creator
         self.validator = validator
         self.cleaner = cleaner
@@ -39,15 +38,13 @@ class DataEnggPipeline:
 
     def run(self):
         # Deligate the pipeline
-        print(f"Dataset path => {self.dataPath}")
         data = self.creator.create(self.dataPath)
-        print(f"data.   {data}")
         if self.validator.validate(data) == True:
             cleaned = self.cleaner.clean(data)
             processed = self.processor.process(cleaned)
             self.visualizer.visualize(processed)
         else:
-            print("Data  is not correct")
+            print("Invalid Data")
 
 
 if __name__ == "__main__":
@@ -68,7 +65,6 @@ if __name__ == "__main__":
 
     load_dotenv()
     dataset_path = os.getenv("DATASET")
-    print(f"main-> {dataset_path}")
     stock_dataset_path = os.getenv("STOCK_DATASET")
     depipeline = DataEnggPipeline(
         stock_dataset_path,
@@ -81,7 +77,6 @@ if __name__ == "__main__":
 
     depipeline.run()
     del depipeline
-    print(dataset_path)
     depipeline = DataEnggPipeline(
         dataset_path,
         SalesDataCreator(),

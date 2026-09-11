@@ -1,0 +1,103 @@
+
+{
+  "application": "DashboardAnalytics",
+  "version": "1.0.0",
+  "charts": [
+    {
+      "chartId": "Distribution",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "distributionData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Geo-spatial",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "spatialData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Categorical",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "categoricalData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Matrix",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "matrixAndRelationData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Part2Whole",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "partToWholeData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "relationalData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Financial",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "StockDataIngestion",
+        "method": "fetch_ticker_data",
+        "parameters": {
+            "ticker": "^NSEI", 
+            "period": "3mo", 
+            "interval": "1d"
+        }
+      }
+    },        
+    {
+      "chartId": "3D",
+      "description": "3D & Advanced Technical Charts",
+      "dataFetcher": {
+        "modulePath": "poc.data",
+        "className": "DataProvider",
+        "method": "threeDdata",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "monthly_sales_revenue",
+      "data_fetcher": {
+        "modulePath": "fetchers.sales_fetcher",
+        "className": "SalesDataFetcher",
+        "method": "fetch_monthly_revenue",
+        "parameters": {"fiscal_year": 2026, "currency": "USD"}
+      },
+      "data_bean": {
+        "modulePath": "beans.revenue_bean",
+        "targetClass": "RevenueBean",
+        "mappingStrategy": "EXPLICIT",
+        "fieldMappings": [
+          {"sourceField": "raw_total_amount", "beanField": "total_revenue"},
+          {"sourceField": "reporting_period", "beanField": "month_name"},
+          {"sourceField": "transaction_count", "beanField": "volume"}
+        ]
+      }
+     }    
+  ]
+}

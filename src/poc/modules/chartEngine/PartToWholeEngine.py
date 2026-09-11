@@ -4,7 +4,7 @@ import plotly.express as px
 import pandas as pd
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class PartToWholeEngine(BaseChartEngine):
@@ -19,17 +19,8 @@ class PartToWholeEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         self.charts = []
-        self.df = self.get_sample_data()
-
-    def get_sample_data(self) -> pd.DataFrame:
-        # Sample data for categories
-        df = pd.DataFrame(
-            {
-                "Labels": ["Tech Support", "Marketing", "Sales", "R&D", "HR"],
-                "Values": [25, 15, 30, 20, 10],
-            }
-        )
-        return df
+        self.dce = DataConfigEngine()
+        self.df = self.dce.fetchData("Part2Whole")
 
     def render_all(self) -> list[dict]:
         self.doNutChart()

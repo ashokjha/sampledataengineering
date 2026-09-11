@@ -44,6 +44,7 @@
   * 📄 [6 Errorbar Interactive](../../reports/Distribution/6_errorbar_interactive.pdf)
   * 📄 [6 Errorbar Static](../../reports/Distribution/6_errorbar_static.pdf)
 * 📁 **Financial**
+  * 📄 [Market Analysis Of ^Nsei [Interval: 1Wk, Period: 4Mo] Interactive](../../reports/Financial/Market%20Analysis%20of%20%5ENSEI%20%5BInterval%3A%201wk%2C%20period%3A%204mo%5D_interactive.pdf)
   * 📄 [Market Analytics Interactive](../../reports/Financial/Market%20Analytics_interactive.pdf)
   * 📄 [Market Analytics Static](../../reports/Financial/Market%20Analytics_static.pdf)
 * 📁 **Geo Spatial**

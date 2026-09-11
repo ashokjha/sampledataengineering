@@ -1,2 +1,2 @@
-from .DataCreator import DataCreator
+from .DataProvider import DataProvider
 from .StockDataIngestion import StockDataIngestion

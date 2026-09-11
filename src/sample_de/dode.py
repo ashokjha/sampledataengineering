@@ -45,7 +45,6 @@ class Dode:
         with open("logging.json", "r") as f:
             config = json.load(f)
             log_file_path = config.get("handlers", {}).get("file", {}).get("filename")
-            print("🔄 [SYSTEM] Log file path:", log_file_path)
             if log_file_path:
                 log_dir = pathlib.Path(log_file_path).parent
                 log_dir.mkdir(parents=True, exist_ok=True)

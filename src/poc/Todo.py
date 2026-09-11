@@ -24,5 +24,13 @@ class Todo:
 
 
 if __name__ == "__main__":
-    todo = Todo("TT", "RR")
-    todo.test()
+    # todo = Todo("TT", "RR")
+    # todo.test()
+    dctt = [{"A": 1, "B": 2}]
+    for index, chart in enumerate(dctt):
+
+        if chart.get("M"):
+            print(hasattr(chart["M"], "AAAA"))
+            print(hasattr(chart["M"]))
+        else:
+            print("No")

@@ -53,14 +53,15 @@ class PdfExporter:
     def convert_pdf(self, reports: list[dict], reportLocation: str) -> list:
         saved_paths = []
         for chart in reports:
-            file_path = os.path.join(reportLocation, f"{chart['name']}_static.pdf")
-            if hasattr(chart["static"], "savefig") == True:
-                chart["static"].savefig(file_path, format="pdf")
-            else:
-                chart["static"].write_image(file_path, format="pdf")
-            saved_paths.append(file_path)
-            file_path = os.path.join(reportLocation, f"{chart['name']}_interactive.pdf")
+            if chart.get("static"):
+                file_path = os.path.join(reportLocation, f"{chart['name']}_static.pdf")
+                if hasattr(chart["static"], "savefig") == True:
+                    chart["static"].savefig(file_path, format="pdf")
+                else:
+                    chart["static"].write_image(file_path, format="pdf")
+                saved_paths.append(file_path)
 
+            file_path = os.path.join(reportLocation, f"{chart['name']}_interactive.pdf")
             chart["interactive"].write_image(file_path, format="pdf")
             saved_paths.append(file_path)
         return saved_paths

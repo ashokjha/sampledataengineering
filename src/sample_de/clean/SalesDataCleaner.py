@@ -49,9 +49,5 @@ if __name__ == "__main__":
     ecdvalidator = EcomSalesDataValidator()
     ecdvalidator.validate(data)
     sdcleaner = SalesDataCleaner()
-    print(f"original date shape: {data.shape}", end="\n")
     # kept if implementation does not do inpllace cleaning
     cleanedData = sdcleaner.clean(data)
-    print(f"cleaned data shape : {cleanedData.shape}", end="\n")
-    print(f"original date shape: {data.shape}", end="\n")
-    # print(f"cleaned data shape {cleanedData}}, end="\n")

@@ -28,14 +28,12 @@ class DataVisualizer(ABC):
 # ==========================================
 class SalesCleaner(DataCleaner):
     def clean(self, data: dict) -> dict:
-        print("[SalesCleaner] Filling missing discounts with 0...")
         data["discount"] = data.get("discount", 0.0)
         return data
 
 
 class SalesProcessor(DataProcessor):
     def process(self, data: dict) -> dict:
-        print("[SalesProcessor] Calculating Net Price after discount...")
         data["net_price"] = data["price"] - data["discount"]
         return data
 
@@ -52,14 +50,12 @@ class SalesVisualizer(DataVisualizer):
 # ==========================================
 class FinanceCleaner(DataCleaner):
     def clean(self, data: dict) -> dict:
-        print("[FinanceCleaner] Removing whitespace from Account Numbers...")
-        data["account"] = str(data["account"]).strip()
+        data["account"] = data["account"].strip()
         return data
 
 
 class FinanceProcessor(DataProcessor):
     def process(self, data: dict) -> dict:
-        print("[FinanceProcessor] Checking compliance and risk flags...")
         data["risk_level"] = "HIGH" if data["amount"] > 50000 else "LOW"
         return data
 

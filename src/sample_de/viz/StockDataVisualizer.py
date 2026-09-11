@@ -34,7 +34,6 @@ class StockDataVisualizer(DataVisualizer):
             None:
         """
         data = data.assign(Date=pd.to_datetime(data["Date"])).set_index("Date")
-        print(data)
         self.candlestickChart(data)
         self.advanceCandlestickChart(data)
 
@@ -132,7 +131,7 @@ if __name__ == "__main__":
     sdvalidator = StockDataValidator()
     sdvalidator.validate(data)
     stockDataCleaner = StockDataCleaner()
-    print(stockDataCleaner.clean(data), end="\n")
+    stockDataCleaner.clean(data)
     sdp = StockDataProcessor()
     sdp.process(data)
     sdv = StockDataVisualizer()

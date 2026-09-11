@@ -2,14 +2,14 @@ import pandas as pd
 import numpy as np
 
 
-class DataCreator:
+class DataProvider:
 
     @staticmethod
     def distributionData() -> pd.DataFrame:
         """
           Create Sample Distribution Data
         Returns:
-            pd.DataFrama: _description_
+            pd.DataFrama: Distribution Data Set
         """
         np.random.seed(42)
         data = {
@@ -26,6 +26,16 @@ class DataCreator:
                 "X": np.random.normal(0, 1, 100),
                 "Y": np.random.normal(0, 1, 100),
                 "Z": np.random.normal(0, 1, 100),
+            }
+        )
+        return df
+
+    @staticmethod
+    def partToWholeData() -> pd.DataFrame:
+        df = pd.DataFrame(
+            {
+                "Labels": ["Tech Support", "Marketing", "Sales", "R&D", "HR"],
+                "Values": [25, 15, 30, 20, 10],
             }
         )
         return df

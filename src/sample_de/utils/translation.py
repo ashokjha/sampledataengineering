@@ -24,7 +24,6 @@ class TranslationManager:
         Returns:
             _type_: returns a dictionary with language codes as keys and their corresponding translation dictionaries as values.
         """
-        print("🔄 [SYSTEM] Loading translation files into memory...")
         translations = {}
         for lang in ["en", "hi"]:
             file_path = self.LOCALES_DIR / f"{lang}.json"

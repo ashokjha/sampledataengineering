@@ -7,7 +7,7 @@ import math
 
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class CategoricalEngine(BaseChartEngine):
@@ -23,7 +23,8 @@ class CategoricalEngine(BaseChartEngine):
 
     def __init__(self):
         super().__init__()
-        self.df, self.radar_df = DataCreator.categoricalData()
+        self.dce = DataConfigEngine()
+        self.df, self.radar_df = self.dce.fetchData("Categorical")
         self.charts = []
 
     def render_all(self) -> list[dict]:

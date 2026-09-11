@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 
 from poc.modules.chartEngine.BaseChartEngine import BaseChartEngine
-from poc.data import DataCreator
+from poc import DataConfigEngine
 
 
 class DistributionEngine(BaseChartEngine):
@@ -22,7 +22,8 @@ class DistributionEngine(BaseChartEngine):
     def __init__(self):
         super().__init__()
         np.random.seed(50)
-        self.df = DataCreator.distributionData()
+        self.dce = DataConfigEngine()
+        self.df = self.dce.fetchData("Distribution")
         self.charts = []
 
     def render_all(self) -> list[dict]:

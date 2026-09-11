@@ -5,9 +5,6 @@ import json
 class DataProcessor:
     def process_json_data(self, json_string):
         data = json.loads(json_string)
-        print(f"[Processor] Processing data for user: {data['name']}")
-        print(f"[Processor] Role: {data['role']}")
-        print(f"[Processor] Objective: {data['objective']}")
 
 
 # 2. Adaptee: Previous srrvice which gives xml data
@@ -49,5 +46,4 @@ if __name__ == "__main__":
     # convert old data in xml format to  data in json format
     compatible_json_data = adapter.get_data_as_json()
 
-    print("--- Adapter Pattern Output ---")
     processor.process_json_data(compatible_json_data)

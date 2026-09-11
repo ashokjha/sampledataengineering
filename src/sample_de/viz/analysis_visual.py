@@ -81,7 +81,6 @@ class sales_and_revenue:
         # -------------------------------------------------------------
         # Char 2: Box Plot - Price Distribution across Category & Subcategory
         # -------------------------------------------------------------
-        print("Creating box plot...")
         # Set the Sales Value according to 'Full_Category' to sort the values for proper display in the boxplot
         df_sorted = self.data.sort_values("Category")
         sns.boxplot(
@@ -189,10 +188,6 @@ class sales_and_revenue:
                 self.chartsPath, f"sales_visualizations_category_{self.langLocal}.png"
             )
         )
-        print(
-            f"Visualization saved as sales_visualizations_category_{self.langLocal}.png => "
-            + self.langLocal
-        )
         # Show the charts on the screen
         # plt.show()
 
@@ -210,15 +205,10 @@ if __name__ == "__main__":
     dataCreator.create_demo_sales_dataset(envreader.get_env(("DATASET"), 90))
     # create_sample_dataset(os.getenv("DATASET"))
     # Clean the data
-    print("Cleaning data from:", envreader.get_env(("DATASET")))
     cleanedDataSet = clean_data(envreader.get_env(("DATASET"))).clean()
-    print("Cleaned data shape:", cleanedDataSet.shape)
     processData = process_data(cleanedDataSet)
     processeddataresult, categorysalesresult = processData.process_data_category()
-    print("Processed data shape:", processeddataresult.shape)
     # Create visualizations
     salesAndRev = sales_and_revenue(processeddataresult)
     salesAndRev.create_visualizations()
     # salesAndRev.create_visualizations_category(categorysalesresult)
-    print("Data loaded successfully. Here's a preview:")
-    print(processeddataresult.head())

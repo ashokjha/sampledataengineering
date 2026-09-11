@@ -5,7 +5,7 @@ from plotly.subplots import make_subplots
 import streamlit as st
 
 from poc.modules.chartEngine import BaseChartEngine
-from poc.data import StockDataIngestion
+from poc import DataConfigEngine
 
 
 class FinancialEngine(BaseChartEngine):
@@ -14,36 +14,36 @@ class FinancialEngine(BaseChartEngine):
     rendering and static report image generation with an all-black terminal UI.
     """
 
-    def __init__(self, ticker="^NSEI"):
-        # ऑल-ब्लैक थीम कॉन्फ़िगरेशन
+    def __init__(self):
         self.plotly_template = "plotly_dark"
         self.bg_color = "#000000"  # Pure Black Background
         self.grid_color = "#222222"  # Dark Grey Gridlines
-        self.ticker_symbol = ticker
-        self.data = StockDataIngestion.fetch_ticker_data(
-            ticker=self.ticker_symbol, period="3mo", interval="1d"
-        )
+        self.period = "4mo"
+        self.interval = "1wk"
+        self.ticker_symbol = "^NSEI"
+        self.external_context = {
+            "ticker": self.ticker_symbol,
+            "interval": self.interval,
+            "period": self.period,
+        }
+        self.dce = DataConfigEngine()
+        self.data = self.dce.fetchData("Financial", self.external_context)
         self.charts = []
 
     def render_all(self) -> list[dict]:
-        save_path = f"charts/{self.ticker_symbol}_static_chart.png"
-        fig_s1, save_path = self.render_static(
-            save_path=save_path, title=f"{self.ticker_symbol} - Static View"
-        )
+        # save_path = f"charts/{self.ticker_symbol}_static_chart.png"
+        # fig_s1, save_path = self.render_static(
+        #    save_path=save_path, title=f"{self.ticker_symbol} - Static View"
+        # )
 
-        print("#$$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%")
-        print(fig_s1)
-        print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-
-        fig_i1 = self.render_interactive(
-            title=f"{self.ticker_symbol} - Zoomable Terminal Layout"
-        )
+        fig_i1 = self.render_interactive(title=f"{self.ticker_symbol} - Market Analsis")
+        title = f"Market Analysis of {self.ticker_symbol} [Interval: {self.interval}, period: {self.period}]"
+        name = f"Market Analysis of {self.ticker_symbol}_{self.interval}_{self.period}"
         self.charts.append(
             {
-                "title": f"{self.ticker_symbol} - Dynamic View",
-                "static": fig_s1,
+                "title": title,
                 "interactive": fig_i1,
-                "name": "Market Analytics",
+                "name": name,
             }
         )
         return self.charts
@@ -144,7 +144,7 @@ class FinancialEngine(BaseChartEngine):
         fig = self._generate_plotly_figure(title, show_volume, moving_averages)
 
         if not save_path:
-            save_path = "outputs/financial_static_chart.png"
+            save_path = "charts/financial_static_chart.png"
 
         os.makedirs(os.path.dirname(save_path) or ".", exist_ok=True)
 
