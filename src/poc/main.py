@@ -19,40 +19,65 @@ class Dashboard:
     def display(self):
         for index, chart in enumerate(self.active_charts):
             st.header(f"{index + 1}. {chart['title']}")
-            match (self.view_mode):
+            static_chart = chart.get("static")
+            interactive_chart = chart.get("interactive")
+            is_static = static_chart is not None
+            is_interactive = interactive_chart is not None
+            is_static_savefig = is_static and hasattr(static_chart, "savefig")
+            match self.view_mode:
                 case DisplayMode.BOTH:
-                    match (self.category):
-                        case ChartType.FINANCIAL:
-                            st.plotly_chart(chart["interactive"], width="stretch")
-                        case __:
-                            col1, col2 = st.columns(2)
-                            with col1:
-                                if hasattr(chart["static"], "savefig") == True:
-                                    st.pyplot(chart["static"])
-                                else:
-                                    st.plotly_chart(chart["static"], width="stretch")
-                            with col2:
-                                st.plotly_chart(chart["interactive"], width="stretch")
-
+                    if is_static and is_interactive:
+                        col1, col2 = st.columns(2)
+                        with col1:
+                            self.displayChart(static_chart, is_static_savefig)
+                        with col2:
+                            self.displayChart(interactive_chart)
+                    else:
+                        chart_obj = (
+                            static_chart
+                            if is_static
+                            else interactive_chart if is_interactive else None
+                        )
+                        if chart_obj is not None:
+                            self.displayChart(chart_obj)
                 case DisplayMode.INTERCTIVE:
-                    st.plotly_chart(chart["interactive"], width="stretch")
-
+                    self.displayChart(interactive_chart)
                 case __:
-                    match (self.category):
-                        case ChartType.FINANCIAL:
-                            st.plotly_chart(chart["interactive"], width="stretch")
-                        case __:
-                            if hasattr(chart["static"], "savefig") == True:
-                                st.pyplot(chart["static"])
-                            else:
-                                st.plotly_chart(chart["static"], width="stretch")
-
+                    chart_obj = (
+                        static_chart
+                        if is_static
+                        else interactive_chart if is_interactive else None
+                    )
+                    if chart_obj is not None:
+                        self.displayChart(chart_obj, is_static_savefig)
             st.divider()
+
+    def displayChart(self, chartObj, isSavefig=False):
+        if isSavefig:
+            st.pyplot(chartObj)
+        else:
+            st.plotly_chart(chartObj, width="stretch")
+
+    def downloadReport(self):
+        # download Report
+        exporter = PdfExporter()
+        reportPath = os.path.join(
+            os.getenv("PDFREPORT", "generated"),
+            self.category.replace("Engine", "").strip().replace(" ", "_"),
+        )
+        print(f"Reportpath={reportPath}")
+        if not os.path.exists(reportPath):
+            os.makedirs(reportPath)
+        if st.sidebar.button("Export All Charts to PDF"):
+            Loader.show_top_loader()
+            with st.empty(), st.spinner("Generating PDF vectors..."):
+                reports = exporter.convert_pdf(self.active_charts, reportPath)
+                return reports
 
     def createDashboard(self):
         load_dotenv()
         # 1. UI theme setup
-        st.set_page_config(layout="wide", page_title="Chart Vault")
+        st.set_page_config(layout="wide", page_title="Python Chart Vault")
         st.title("🧱 Dynamic Routed Chart Vault")
 
         # 2. sidebar Category Selection
@@ -87,20 +112,10 @@ class Dashboard:
 
         # Display
         self.display()
-
-        # download Report
-        exporter = PdfExporter()
-        reportPath = os.path.join(
-            os.getenv("PDFREPORT", "generated"),
-            self.category.replace("Engine", "").strip().replace(" ", "_"),
-        )
-        if not os.path.exists(reportPath):
-            os.makedirs(reportPath)
-        if st.sidebar.button("Export All Charts to PDF"):
-            Loader.show_top_loader()
-            with st.empty(), st.spinner("Generating PDF vectors..."):
-                createReports = exporter.convert_pdf(self.active_charts, reportPath)
-                print(f"Reports : \n {createReports} \n created successfully")
+        # dowload Reports
+        reports = self.downloadReport()
+        if reports:
+            print(f"Reports : \n {reports} \n")
 
 
 if __name__ == "__main__":

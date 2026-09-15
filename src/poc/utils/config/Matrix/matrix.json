@@ -1,0 +1,12 @@
+[
+    {
+      "chartId": "Matrix",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "matrixAndRelationData",
+        "parameters": {}
+      }
+    }    
+
+]

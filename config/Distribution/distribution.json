@@ -1,0 +1,11 @@
+[    
+    {
+      "chartId": "Distribution",
+      "dataAdapter": {
+        "modulePath": "poc.data.distribution",
+        "className": "DistributionAdapter",
+        "method": "distributionData",
+        "parameters": {}
+      }
+    }
+]

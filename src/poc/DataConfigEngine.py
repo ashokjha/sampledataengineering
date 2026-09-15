@@ -35,11 +35,13 @@ class DataConfigEngine:
         if not chart_meta:
             raise ValueError(f"Chart ID '{chart_id}' not found in configuration.")
 
-        fetcher_info = chart_meta["dataFetcher"]
+        fetcher_info = chart_meta["dataAdapter"]
         fetcher_class = self._dynamic_import(
             fetcher_info["modulePath"], fetcher_info["className"]
         )
+
         fetcher_method = getattr(fetcher_class, fetcher_info["method"])
+
         query_params = fetcher_info.get("parameters", {})
 
         final_query_params = {**query_params}
@@ -52,5 +54,3 @@ class DataConfigEngine:
 
 if __name__ == "__main__":
     dc = DataConfigEngine()
-    print(dc.fetchData("distribution"))
-    print(dc.fetchData("distributionNoExist"))

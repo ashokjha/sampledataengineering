@@ -20,19 +20,69 @@ class PartToWholeEngine(BaseChartEngine):
         super().__init__()
         self.charts = []
         self.dce = DataConfigEngine()
-        self.df = self.dce.fetchData("Part2Whole")
 
     def render_all(self) -> list[dict]:
-        self.doNutChart()
-        self.treeMap()
+        # 1. Pie chart
+        piechrtdf = self.dce.fetchData("Part2Whole_Pie")
+        self.pieChart(piechrtdf)
+
+        # 2. Donut Data
+        dndf = self.dce.fetchData("Part2Whole_Donut")
+        self.doNutChart(dndf)
+
+        # 3. Tree Map
+        treemapdf = self.dce.fetchData("Part2Whole_treemap")
+        self.treeMap(treemapdf)
+
+        # 4. Sunburst Chart
+
         return self.charts
 
-    def doNutChart(self) -> None:
-        # 1. Donut Chart
-        fig_s1, ax = plt.subplots(figsize=(6, 4))
+    def pieChart(self, pie_df: pd.DataFrame) -> None:
+        """1. Pie Chart
+
+        Args:
+            pie_df (pd.DataFrame): _description_
+        """
+        explode = [0.1, 0, 0, 0, 0, 0]
+
+        piech_fig_s, ax = plt.subplots(figsize=(8, 8))
+
         ax.pie(
-            self.df["Values"],
-            labels=self.df["Labels"],
+            pie_df["Market_Share"],
+            labels=pie_df["Brand"],
+            autopct="%1.1f%%",
+            startangle=140,
+            explode=explode,
+            colors=["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#7f7f7f"],
+        )
+        plt.title("EV Market Share - Static View", fontsize=16, fontweight="bold")
+
+        # Interactive
+        piech_fig_i = px.pie(
+            pie_df,
+            values="Market_Share",
+            names="Brand",
+            title="EV Market Share - Interactive View",
+            color_discrete_sequence=px.colors.sequential.RdBu,
+        )
+
+        piech_fig_i.update_traces(textinfo="percent+label")
+        self.charts.append(
+            {
+                "title": "Pie Chart",
+                "static": piech_fig_s,
+                "interactive": piech_fig_i,
+                "name": "Pie Chart",
+            }
+        )
+
+    def doNutChart(self, dndf: pd.DataFrame) -> None:
+        # 2. Donut Chart
+        fig_dndf_s, ax = plt.subplots(figsize=(6, 4))
+        ax.pie(
+            dndf["Values"],
+            labels=dndf["Labels"],
             autopct="%1.1f%%",
             startangle=90,
             wedgeprops=dict(width=0.4, edgecolor="w"),
@@ -40,8 +90,8 @@ class PartToWholeEngine(BaseChartEngine):
         )
         ax.set_title("Static Donut Chart")
 
-        fig_i1 = px.pie(
-            self.df,
+        fig_dndf_i = px.pie(
+            dndf,
             names="Labels",
             values="Values",
             hole=0.4,
@@ -50,31 +100,31 @@ class PartToWholeEngine(BaseChartEngine):
         self.charts.append(
             {
                 "title": "Donut Proportions",
-                "static": fig_s1,
-                "interactive": fig_i1,
+                "static": fig_dndf_s,
+                "interactive": fig_dndf_i,
                 "name": "Donut Chart",
             }
         )
 
-    def treeMap(self) -> None:
-        # 2. Treemap
-        fig_s2, ax = plt.subplots(figsize=(6, 4))
+    def treeMap(self, treeDf: pd.DataFrame) -> None:
+        # 3. Treemap
+        fig_treemap_s, ax = plt.subplots(figsize=(6, 4))
         # Since squarify requires external installation, we can build a clean horizontal stacked block layout for static
         cumulative = 0
-        for i, row in self.df.iterrows():
+        for i, row in treeDf.iterrows():
             ax.barh("Total Share", row["Values"], left=cumulative, label=row["Labels"])
             cumulative += row["Values"]
         ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.2), ncol=5)
-        ax.set_title("Static Proportional Share Chart")
+        ax.set_title("Static Proportional Share Tree Map Chart")
 
-        fig_i2 = px.treemap(
-            self.df, path=["Labels"], values="Values", title="Interactive Treemap"
+        fig_treemap_i = px.treemap(
+            treeDf, path=["Labels"], values="Values", title="Interactive Treemap"
         )
         self.charts.append(
             {
                 "title": "Treemap Hierarchy",
-                "static": fig_s2,
-                "interactive": fig_i2,
+                "static": fig_treemap_s,
+                "interactive": fig_treemap_i,
                 "name": "Tree Map",
             }
         )

@@ -1,0 +1,11 @@
+[
+    {
+      "chartId": "Geo-spatial",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "spatialData",
+        "parameters": {}
+      }
+    }    
+]

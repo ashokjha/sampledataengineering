@@ -1,0 +1,29 @@
+[
+  {
+    "chartId": "Part2Whole_Pie",
+    "dataAdapter": {
+      "modulePath": "poc.data.p2w",
+      "className": "Part2Whole",
+      "method": "pieChartData",
+      "parameters": {}
+    }
+  },
+  {
+      "chartId": "Part2Whole_Donut",
+      "dataAdapter": {
+        "modulePath": "poc.data.p2w",
+        "className": "Part2Whole",
+        "method": "donutData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Part2Whole_treemap",
+      "dataAdapter": {
+        "modulePath": "poc.data.p2w",
+        "className": "Part2Whole",
+        "method": "treemapData",
+        "parameters": {}
+      }
+    }
+  ]

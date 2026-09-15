@@ -1,0 +1,12 @@
+
+[
+    {
+        "chartId": "Categorical",
+        "dataAdapter": {
+            "modulePath": "poc.data",
+            "className": "DataAdapter",
+            "method": "categoricalData",
+            "parameters": {}
+        }
+    }
+]

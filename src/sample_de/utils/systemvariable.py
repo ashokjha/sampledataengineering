@@ -44,4 +44,3 @@ if __name__ == "__main__":
     envVar = systemvariablemanager()
     all_vars = envVar.get_all_env_variables()
     print(all_vars)
-    print(envVar.get_env("PALETTE", 123))

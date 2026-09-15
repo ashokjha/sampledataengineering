@@ -13,29 +13,33 @@ from poc import DataConfigEngine
 class CategoricalEngine(BaseChartEngine):
     """<b>Categorical & Comparison Charts</b>:
     Best libraries: <b>Matplotlib</b> or <b>PlotlyVertical</b>
-    <ul><b>Bar Chart:</b> Compares discrete categories by height.</ul>
-    <ul><b>Horizontal Bar Chart:</b> Ideal for categories with long text labels.</ul>
-    <ul><b>Stacked Bar Chart:</b> Breaks down categorical bars into smaller sub-segments.</ul>
-    <ul><b>Grouped Bar Chart (Clustered):</b> Places sub-segments side-by-side for direct comparison.</ul>
-    <ul></b>Lollipop Chart:</b> A clean alternative to bar charts using a line and a dot.</ul>
-    <ul><b>Radar Chart (Spider Plot):</b> Compares multiple quantitative variables across categories.</ul>
+    <ol>
+    <li><b>Vertical Bar Chart:</b> Compares discrete categories by height.</li>
+    <li><b>Horizontal Bar Chart:</b> Ideal for categories with long text labels.</li>
+    <li><b>Stacked Bar Chart:</b> Breaks down categorical bars into smaller sub-segments.</li>
+    <li><b>Grouped Bar Chart (Clustered):</b> Places sub-segments side-by-side for direct comparison.</li>
+    <li><b>Lollipop Chart:</b> A clean alternative to bar charts using a line and a dot.</li>
+    <li><b>Radar Chart (Spider Plot):</b> Compares multiple quantitative variables across categories.</li>
+    </ol>
     """
 
     def __init__(self):
         super().__init__()
         self.dce = DataConfigEngine()
-        self.df, self.radar_df = self.dce.fetchData("Categorical")
+        self.df, self.groupedData, self.radar_df = self.dce.fetchData("Categorical")
         self.charts = []
 
     def render_all(self) -> list[dict]:
         self.barChart()
+        self.horizontalBarChart()
         self.stackedBarChart()
+        self.groupedBarChart()
         self.lollipopChart()
         self.radarChart()
         return self.charts
 
     def barChart(self) -> None:
-        # --- 1. BAR CHART  ---
+        # --- 1. Product Verttical  BAR Chart  ---
         color_seq = px.colors.qualitative.Pastel
         fig_s1, ax = plt.subplots(figsize=(6, 4))
         sns.barplot(
@@ -43,41 +47,82 @@ class CategoricalEngine(BaseChartEngine):
             x="Quarter",
             y="Sales",
             hue="Product",
+            orient="v",
             ax=ax,
             palette="Set2",
         )
-        ax.set_title("Static Grouped Bar Chart")
+        ax.set_title("Static Vertical Bar Chart")
 
         fig_i1 = px.bar(
             self.df,
             x="Quarter",
             y="Sales",
             color="Product",
-            barmode="group",
-            title="Interactive Grouped Bar Chart",
+            orientation="v",
+            # barmode="group",
+            title="Interactive Bar Chart",
             color_discrete_sequence=px.colors.qualitative.Pastel,
         )
         self.charts.append(
             {
-                "title": "Grouped Bar Analysis",
+                "title": "Product Verttical Bar Chart",
                 "static": fig_s1,
                 "interactive": fig_i1,
-                "name": "Bar Chart",
+                "name": "Product Verttical Bar Chart",
+            }
+        )
+
+    def horizontalBarChart(self) -> None:
+        # --- 2. Horizontal BAR Chart  ---
+        color_seq = px.colors.qualitative.Pastel
+        fig_s1, ax = plt.subplots(figsize=(6, 4))
+        sns.barplot(
+            data=self.df,
+            x="Sales",
+            y="Quarter",
+            hue="Product",
+            orient="h",
+            ax=ax,
+            palette="Set2",
+        )
+        ax.set_title("Static Horizontal Bar Chart")
+
+        fig_i1 = px.bar(
+            self.df,
+            x="Sales",
+            y="Quarter",
+            color="Product",
+            orientation="h",
+            barmode="group",
+            title="Interactive Horizontal Bar Chart",
+            color_discrete_sequence=px.colors.qualitative.Pastel,
+        )
+        self.charts.append(
+            {
+                "title": "Product Horizontal Bar Chart",
+                "static": fig_s1,
+                "interactive": fig_i1,
+                "name": "Product Horizontal Bar Chart",
             }
         )
 
     def stackedBarChart(self) -> None:
-        # --- 2. STACKED BAR CHART ---
+        # --- 3. STACKED BAR Chart ---
         fig_s2, ax = plt.subplots(figsize=(6, 4))
-        pivot_df = self.df.pivot_table(
+        pivot_df = self.groupedData.pivot_table(
             index="Quarter", columns="Product", values="Sales", aggfunc="sum"
         )
-        pivot_df.plot(kind="bar", stacked=True, ax=ax, color=["#cb6666", "#ddaa66"])
+        pivot_df.plot(
+            kind="bar",
+            stacked=True,
+            ax=ax,
+            color=["#cb6666", "#ddaa66", "#66dd6c"],
+        )
         ax.set_title("Static Stacked Bar Chart")
         plt.xticks(rotation=0)
 
         fig_i2 = px.bar(
-            self.df,
+            self.groupedData,
             x="Quarter",
             y="Sales",
             color="Product",
@@ -89,12 +134,56 @@ class CategoricalEngine(BaseChartEngine):
                 "title": "Stacked Bar Composition",
                 "static": fig_s2,
                 "interactive": fig_i2,
-                "name": "Stsacked Bar Chart",
+                "name": "Stacked Bar Chart",
+            }
+        )
+
+    def groupedBarChart(self) -> None:
+        # 4. Grouped Bar Chart
+
+        fig_gbs, ax = plt.subplots(figsize=(6, 4))
+
+        fig_gbs = px.bar(
+            self.groupedData,
+            x="Quarter",
+            y="Sales",
+            color="Product",
+            barmode="group",
+            title="Quarterly Sales Comparison by Product",
+            text_auto=True,
+        )
+
+        fig_gbi = px.bar(
+            self.groupedData,
+            x="Quarter",
+            y="Sales",
+            color="Product",
+            barmode="group",
+            title="Quarterly Sales Comparison by Product",
+            labels={
+                "Sales": "Sales (Units)",
+                "Quarter": "Financial Quarter",
+            },
+            text_auto=".0f",
+            hover_data={"Sales": ":$,.0f"},
+        )
+
+        fig_gbi.update_layout(
+            hovermode="x unified",
+            xaxis={"categoryorder": "category ascending"},
+            legend_title_text="Products List",
+        )
+        self.charts.append(
+            {
+                "title": "Grouped Bar Sales",
+                "static": fig_gbs,
+                "interactive": fig_gbi,
+                "name": "Grouped Bar Sales",
             }
         )
 
     def lollipopChart(self) -> None:
-        # --- 3. LOLLIPOP CHART ---
+        # --- 5. LOLLIPOP CHART ---
         fig_s3, ax = plt.subplots(figsize=(6, 4))
         sub_df = self.df[self.df["Product"] == "Software"]
         ax.hlines(
@@ -126,7 +215,7 @@ class CategoricalEngine(BaseChartEngine):
         )
 
     def radarChart(self) -> None:
-        # --- 4. RADAR CHART ---
+        # --- 6. RADAR CHART ---
         fig_s4 = plt.figure(figsize=(6, 4))
         ax = fig_s4.add_subplot(111, polar=True)
 

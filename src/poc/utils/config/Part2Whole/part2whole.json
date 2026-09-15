@@ -1,0 +1,11 @@
+[
+    {
+      "chartId": "Part2Whole",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "partToWholeData",
+        "parameters": {}
+      }
+    }
+]

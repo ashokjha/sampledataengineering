@@ -11,40 +11,44 @@ from poc import DataConfigEngine
 class DistributionEngine(BaseChartEngine):
     """<b>Statistical & Distribution Charts:</b>
     Best libraries: <b>Seaborn</b> or <b>Matplotlib</b>
-    <ul> <b>Histogram:</b> Visualizes the distribution of a single continuous variable.</ul>
-    <ul> <b>Box Plot:</b> Displays the median, quartiles, and outliers of a dataset.</ul>
-    <ul> <b>Violin Plot:</b> Combines a box plot with a kernel density plot to show data shape.</ul>
-    <ul> <b>Density Plot (KDE):</b> Shows the probability density function of the data.</ul>
-    <ul> <b>Strip / Swarm Plot:</b> Plots every individual data point to show exact distribution.</ul>
-    <ul> <b>Error Bar Chart: </b> Shows error or uncertainty along with the main data points.</ul>
+    <OL>
+    <li> <b>Histogram:</b> Visualizes the distribution of a single continuous variable.</li>
+    <li> <b>Box Plot:</b> Displays the median, quartiles, and outliers of a dataset.</li>
+    <li> <b>Violin Plot:</b> Combines a box plot with a kernel density plot to show data shape.</li>
+    <li> <b>Density Plot (KDE):</b> Shows the probability density function of the data.</li>
+    <li> <b>Strip / Swarm Plot:</b> Plots every individual data point to show exact distribution.</li>
+    <li> <b>Error Bar Chart: </b> Shows error or uncertainty along with the main data points.</li>
+    </OL>
     """
 
     def __init__(self):
         super().__init__()
         np.random.seed(50)
         self.dce = DataConfigEngine()
-        self.df = self.dce.fetchData("Distribution")
         self.charts = []
 
     def render_all(self) -> list[dict]:
-        self.render_histogram(self.df, "Value")
-        self.render_boxplot(self.df, "Category", "Value")
-        self.render_violinplot(self.df, "Category", "Value")
-        self.render_density_plot(self.df, "Value")
-        self.render_swarm_plot(self.df, "Category", "Value")
-        self.render_error_bar_chart(self.df, "Category", "Value")
+        self.distributiondf = self.dce.fetchData("Distribution")
+        self.render_histogram(self.distributiondf, "Value")
+        self.render_boxplot(self.distributiondf, "Category", "Value")
+        self.render_violinplot(self.distributiondf, "Category", "Value")
+        self.render_density_plot(self.distributiondf, "Value")
+        self.render_swarm_plot(self.distributiondf, "Category", "Value")
+        self.render_error_bar_chart(self.distributiondf, "Category", "Value")
         return self.charts
 
     def render_histogram(self, df, column) -> None:
-        """Generates both a static and interactive Histogram."""
+        """1. Histogram."""
         # 1. Static (Seaborn)
         fig_static, ax = plt.subplots(figsize=(8, 5))
-        sns.histplot(data=self.df, x=column, kde=True, ax=ax, color="#1f77b4")
+        sns.histplot(
+            data=self.distributiondf, x=column, kde=True, ax=ax, color="#1f77b4"
+        )
         ax.set_title(f"Static Histogram of {column}")
 
         # 2. Interactive (Plotly)
         fig_interactive = px.histogram(
-            self.df,
+            self.distributiondf,
             x=column,
             marginal="rug",
             title=f"Interactive Histogram of {column}",
@@ -59,7 +63,7 @@ class DistributionEngine(BaseChartEngine):
         self.charts.append(chartDct)
 
     def render_boxplot(self, df, x_col, y_col) -> None:
-        """Generates both a static and interactive Box Plot."""
+        """2. Box Plot."""
         # 1. Static (Seaborn)
         fig_static, ax = plt.subplots(figsize=(8, 5))
         sns.boxplot(data=df, x=x_col, y=y_col, ax=ax, palette="Set2")
@@ -83,7 +87,7 @@ class DistributionEngine(BaseChartEngine):
         self.charts.append(chartDct)
 
     def render_violinplot(self, df, x_col, y_col) -> None:
-        """Generates both a static and interactive Violin Plot."""
+        """3. Violin ."""
 
         # 1. Static (Seaborn)
         fig_static, ax = plt.subplots(figsize=(8, 5))
@@ -111,7 +115,7 @@ class DistributionEngine(BaseChartEngine):
         self.charts.append(chartDct)
 
     def render_density_plot(self, df, column) -> None:
-        """Generates both a static and interactive Density Plot (KDE)."""
+        """4. Density Plot (KDE)."""
         # 1. Static (Seaborn)
         fig_static, ax = plt.subplots(figsize=(8, 5))
         sns.kdeplot(data=df, x=column, fill=True, color="#2ca02c", alpha=0.5, ax=ax)
@@ -135,7 +139,7 @@ class DistributionEngine(BaseChartEngine):
         self.charts.append(chartDct)
 
     def render_swarm_plot(self, df, x_col, y_col) -> None:
-        """Generates both a static and interactive Strip/Swarm Plot."""
+        """5. Strip/Swarm Plot."""
         # 1. Static (Seaborn Strip Plot - cleaner for larger data than pure Swarm)
         fig_static, ax = plt.subplots(figsize=(8, 5))
         sns.stripplot(
@@ -170,7 +174,7 @@ class DistributionEngine(BaseChartEngine):
         self.charts.append(chartDct)
 
     def render_error_bar_chart(self, df, x_col, y_col) -> None:
-        """Generates an Error Bar Chart showing averages and standard deviations."""
+        """6. Error Bar"""
         # Calculate group aggregates for error calculation
         summary = df.groupby(x_col)[y_col].agg(["mean", "std"]).reset_index()
 

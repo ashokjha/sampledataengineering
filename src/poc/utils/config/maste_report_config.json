@@ -1,0 +1,17 @@
+{
+  "application": "DashboardAnalytics",
+  "version": "1.0.0",
+  "charts": {
+      "$include": [
+        "Categorical/categorical.json",
+        "Distribution/distribution.json",
+        "Geo_Spatial/geospecial.json",
+        "Matrix/matrix.json",
+        "Financial/financial.json",
+        "Part2Whole/part2whole.json",
+        "3D/threeD.json",
+        "Relation/relation.json"
+
+    ]
+  }
+}

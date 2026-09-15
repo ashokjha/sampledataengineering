@@ -1,0 +1,15 @@
+[
+    {
+      "chartId": "Financial",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "StockDataIngestion",
+        "method": "fetch_ticker_data",
+        "parameters": {
+            "ticker": "^NSEI", 
+            "period": "3mo", 
+            "interval": "1d"
+        }
+      }
+    }    
+]

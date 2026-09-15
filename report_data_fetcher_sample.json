@@ -5,61 +5,61 @@
   "charts": [
     {
       "chartId": "Distribution",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "distributionData",
         "parameters": {}
       }
     },
     {
       "chartId": "Geo-spatial",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "spatialData",
         "parameters": {}
       }
     },
     {
       "chartId": "Categorical",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "categoricalData",
         "parameters": {}
       }
     },
     {
       "chartId": "Matrix",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "matrixAndRelationData",
         "parameters": {}
       }
     },
     {
       "chartId": "Part2Whole",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "partToWholeData",
         "parameters": {}
       }
     },
     {
       "chartId": "Relational",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "relationalData",
         "parameters": {}
       }
     },
     {
       "chartId": "Financial",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
         "className": "StockDataIngestion",
         "method": "fetch_ticker_data",
@@ -73,16 +73,26 @@
     {
       "chartId": "3D",
       "description": "3D & Advanced Technical Charts",
-      "dataFetcher": {
+      "dataAdapter": {
         "modulePath": "poc.data",
-        "className": "DataProvider",
+        "className": "DataAdapter",
         "method": "threeDdata",
         "parameters": {}
       }
     },
     {
+      "chartId": "3D_Surface",
+      "description": "3D & Advanced Surface Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "surfaceData",
+        "parameters": {}
+      }
+    },    
+    {
       "chartId": "monthly_sales_revenue",
-      "data_fetcher": {
+      "dataAdapter": {
         "modulePath": "fetchers.sales_fetcher",
         "className": "SalesDataFetcher",
         "method": "fetch_monthly_revenue",

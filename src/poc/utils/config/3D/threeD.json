@@ -1,0 +1,22 @@
+[
+    {
+      "chartId": "3D",
+      "description": "3D & Advanced Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "threeDdata",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "3D_Surface",
+      "description": "3D & Advanced Surface Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "surfaceData",
+        "parameters": {}
+      }
+    }    
+]

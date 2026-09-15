@@ -5,4 +5,5 @@ logs
 .vscode
 .deenv
 .streamlit
+.agents
 sample_de.egg-info

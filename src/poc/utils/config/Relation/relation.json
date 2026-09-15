@@ -1,0 +1,11 @@
+[    
+    {
+      "chartId": "Relational",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "relationalData",
+        "parameters": {}
+      }
+    }
+]

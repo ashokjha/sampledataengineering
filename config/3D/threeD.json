@@ -1,0 +1,42 @@
+[
+    {
+      "chartId": "3D_Scatter",
+      "description": "3D & Advanced Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data.threeD",
+        "className": "ThreeDAdapter",
+        "method": "threeDdata",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "3D_Surface",
+      "description": "3D & Advanced Surface Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data.threeD",
+        "className": "ThreeDAdapter",
+        "method": "surfaceData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "3D_Par_Cord",
+      "description": "3D & Advanced Surface Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data.threeD",
+        "className": "ThreeDAdapter",
+         "method": "parallelCordinates",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "3D_Word_Cloud",
+      "description": "3D word cloud Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data.threeD",
+        "className": "ThreeDAdapter",
+         "method": "worldCloud",
+        "parameters": {}
+      }
+    }       
+]

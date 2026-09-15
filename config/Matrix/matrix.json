@@ -1,0 +1,38 @@
+[
+    {
+      "chartId": "Matrix_Heatmap",
+      "dataAdapter": {
+        "modulePath": "poc.data.matrix",
+        "className": "MatrixRelationAdapter",
+        "method": "heatMapData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Matrix_Cluster",
+      "dataAdapter": {
+        "modulePath": "poc.data.matrix",
+        "className": "MatrixRelationAdapter",
+        "method": "clusterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Matrix_Sankey_Flow",
+      "dataAdapter": {
+        "modulePath": "poc.data.matrix",
+        "className": "MatrixRelationAdapter",
+        "method": "sankeyFlowData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Matrix_Chord",
+      "dataAdapter": {
+        "modulePath": "poc.data.matrix",
+        "className": "MatrixRelationAdapter",
+        "method": "chordData",
+        "parameters": {}
+      }
+    }            
+]

@@ -1,0 +1,93 @@
+{
+  "application": "DashboardAnalytics",
+  "version": "1.0.0",
+  "charts": [
+    {
+      "chartId": "Categorical",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "categoricalData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Distribution",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "distributionData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Geo-spatial",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "spatialData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Matrix",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "matrixAndRelationData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Financial",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "StockDataIngestion",
+        "method": "fetch_ticker_data",
+        "parameters": {
+          "ticker": "^NSEI",
+          "period": "3mo",
+          "interval": "1d"
+        }
+      }
+    },
+    {
+      "chartId": "Part2Whole",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "partToWholeData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "3D",
+      "description": "3D & Advanced Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "threeDdata",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "3D_Surface",
+      "description": "3D & Advanced Surface Technical Charts",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "surfaceData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational",
+      "dataAdapter": {
+        "modulePath": "poc.data",
+        "className": "DataAdapter",
+        "method": "relationalData",
+        "parameters": {}
+      }
+    }
+  ]
+}
