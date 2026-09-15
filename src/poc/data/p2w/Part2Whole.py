@@ -31,3 +31,31 @@ class Part2Whole:
             }
         )
         return df
+
+    @staticmethod
+    def sunburstData() -> pd.DataFrame:
+        data = {
+            "Department": [
+                "Electronics",
+                "Electronics",
+                "Electronics",
+                "Clothing",
+                "Clothing",
+                "Home",
+                "Home",
+            ],
+            "Category": [
+                "Smartphones",
+                "Smartphones",
+                "Laptops",
+                "Apparel",
+                "Apparel",
+                "Kitchen",
+                "Furniture",
+            ],
+            "Region": ["North", "South", "North", "North", "East", "West", "South"],
+            "Sales": [50000, 35000, 75000, 30000, 45000, 20000, 25000],
+        }
+
+        df_sales = pd.DataFrame(data)
+        return df_sales

@@ -51,7 +51,7 @@ python src/poc/utils/json_merge.py path/to/masterreport.json path/to/reports.jso
   * **Pie✓**
   * **Donut ✓**
   * **Treemap ✓**
-  * **Sunburst**
+  * **Sunburst✓**
 * **Relational & Trend**
   * **Line Chart ✓**
   * **Scatter Plot ✓**
@@ -133,6 +133,8 @@ python src/poc/utils/json_merge.py path/to/masterreport.json path/to/reports.jso
   * 📄 [Donut Chart Static](../../reports/Part-To-Whole/Donut%20Chart_static.pdf)
   * 📄 [Pie Chart Interactive](../../reports/Part-To-Whole/Pie%20Chart_interactive.pdf)
   * 📄 [Pie Chart Static](../../reports/Part-To-Whole/Pie%20Chart_static.pdf)
+  * 📄 [Sun Burst Chart Interactive](../../reports/Part-To-Whole/Sun%20Burst%20Chart_interactive.pdf)
+  * 📄 [Sun Burst Chart Static](../../reports/Part-To-Whole/Sun%20Burst%20Chart_static.pdf)
   * 📄 [Tree Map Interactive](../../reports/Part-To-Whole/Tree%20Map_interactive.pdf)
   * 📄 [Tree Map Static](../../reports/Part-To-Whole/Tree%20Map_static.pdf)
 * 📁 **Relational**

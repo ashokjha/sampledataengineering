@@ -35,6 +35,8 @@ class PartToWholeEngine(BaseChartEngine):
         self.treeMap(treemapdf)
 
         # 4. Sunburst Chart
+        sunburstdf = self.dce.fetchData("Part2Whole_sunburst")
+        self.sunburstChart(sunburstdf)
 
         return self.charts
 
@@ -126,5 +128,61 @@ class PartToWholeEngine(BaseChartEngine):
                 "static": fig_treemap_s,
                 "interactive": fig_treemap_i,
                 "name": "Tree Map",
+            }
+        )
+
+    def sunburstChart(self, sunburstDf: pd.DataFrame) -> None:
+        # 3. Sunburst Chart
+        # Static
+        group_dept = sunburstDf.groupby("Department")["Sales"].sum()
+        group_cat = sunburstDf.groupby(["Department", "Category"])["Sales"].sum()
+
+        sb_fig_s, ax = plt.subplots(figsize=(8, 8))
+
+        # 1. Set screen color
+        colors_dept = ["#1f77b4", "#ff7f0e", "#2ca02c"]
+        colors_cat = ["#9ecae1", "#6baed6", "#fdd0a2", "#fdae6b", "#a1d99b"]
+
+        # 2. Outer Circle - Categories
+        ax.pie(
+            group_cat,
+            radius=1.3,
+            labels=[cat for dept, cat in group_cat.index],
+            colors=colors_cat,
+            startangle=90,
+            wedgeprops=dict(width=0.4, edgecolor="white"),
+        )
+
+        # 3. Inner Circle - Parent Departments
+        ax.pie(
+            group_dept,
+            radius=0.9,
+            labels=group_dept.index,
+            labeldistance=0.4,
+            colors=colors_dept,
+            startangle=90,
+            wedgeprops=dict(width=0.4, edgecolor="white"),
+        )
+
+        plt.title(
+            "Static Hierarchical Sunburst Chart", fontsize=16, pad=40, fontweight="bold"
+        )
+
+        # Interactive
+        sb_fig_i = px.sunburst(
+            sunburstDf,
+            path=["Department", "Category", "Region"],
+            values="Sales",
+            title="Interactive Sales Structure (Click to Drill Down)",
+            color="Sales",
+            color_continuous_scale="RdBu",
+        )
+
+        self.charts.append(
+            {
+                "title": "Sun Burst Chart",
+                "static": sb_fig_s,
+                "interactive": sb_fig_i,
+                "name": "Sun Burst Chart",
             }
         )

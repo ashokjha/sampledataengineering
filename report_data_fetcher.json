@@ -106,6 +106,15 @@
       }
     },
     {
+      "chartId": "Part2Whole_sunburst",
+      "dataAdapter": {
+        "modulePath": "poc.data.p2w",
+        "className": "Part2Whole",
+        "method": "sunburstData",
+        "parameters": {}
+      }
+    },
+    {
       "chartId": "3D_Scatter",
       "description": "3D & Advanced Technical Charts",
       "dataAdapter": {

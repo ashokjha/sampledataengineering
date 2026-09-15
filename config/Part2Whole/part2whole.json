@@ -25,5 +25,14 @@
         "method": "treemapData",
         "parameters": {}
       }
+    },
+    {
+      "chartId": "Part2Whole_sunburst",
+      "dataAdapter": {
+        "modulePath": "poc.data.p2w",
+        "className": "Part2Whole",
+        "method": "sunburstData",
+        "parameters": {}
+      }
     }
   ]
