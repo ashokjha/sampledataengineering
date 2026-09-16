@@ -1,11 +1,56 @@
 [    
     {
-      "chartId": "Relational",
+      "chartId": "Relational_Line",
       "dataAdapter": {
-        "modulePath": "poc.data",
-        "className": "DataAdapter",
-        "method": "relationalData",
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "lineChartData",
         "parameters": {}
       }
-    }
-]
+    },
+    {
+      "chartId": "Relational_scatter",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "scatterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_bubble",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "bubbleChartData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_conn_scatter",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "connScatterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_area",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "areaChartData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_stacked_area",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "stackedAreaData",
+        "parameters": {}
+      }
+    }                
+  ]

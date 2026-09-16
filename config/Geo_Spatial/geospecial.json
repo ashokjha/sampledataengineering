@@ -1,11 +1,29 @@
 [
     {
-      "chartId": "Geo-spatial",
+      "chartId": "Geo-Choropleth",
       "dataAdapter": {
-        "modulePath": "poc.data",
-        "className": "DataAdapter",
-        "method": "spatialData",
+        "modulePath": "poc.data.geo",
+        "className": "GeoDataAdapter",
+        "method": "choroplethData",
         "parameters": {}
       }
-    }    
+    },
+    {
+      "chartId": "Geo-Scatter",
+      "dataAdapter": {
+        "modulePath": "poc.data.geo",
+        "className": "GeoDataAdapter",
+        "method": "scatterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Geo-Connection",
+      "dataAdapter": {
+        "modulePath": "poc.data.geo",
+        "className": "GeoDataAdapter",
+        "method": "connectionData",
+        "parameters": {}
+      }
+    }            
 ]

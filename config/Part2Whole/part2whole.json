@@ -3,7 +3,7 @@
     "chartId": "Part2Whole_Pie",
     "dataAdapter": {
       "modulePath": "poc.data.p2w",
-      "className": "Part2Whole",
+      "className": "Part2WholeDataAdapter",
       "method": "pieChartData",
       "parameters": {}
     }
@@ -12,7 +12,7 @@
       "chartId": "Part2Whole_Donut",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "donutData",
         "parameters": {}
       }
@@ -21,7 +21,7 @@
       "chartId": "Part2Whole_treemap",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "treemapData",
         "parameters": {}
       }
@@ -30,7 +30,7 @@
       "chartId": "Part2Whole_sunburst",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "sunburstData",
         "parameters": {}
       }

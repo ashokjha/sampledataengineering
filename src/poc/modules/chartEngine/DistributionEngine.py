@@ -29,6 +29,7 @@ class DistributionEngine(BaseChartEngine):
 
     def render_all(self) -> list[dict]:
         self.distributiondf = self.dce.fetchData("Distribution")
+
         self.render_histogram(self.distributiondf, "Value")
         self.render_boxplot(self.distributiondf, "Category", "Value")
         self.render_violinplot(self.distributiondf, "Category", "Value")

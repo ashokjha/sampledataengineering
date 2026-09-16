@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-class Part2Whole:
+class Part2WholeDataAdapter:
     @staticmethod
     def pieChartData() -> pd.DataFrame:
         data = {

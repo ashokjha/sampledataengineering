@@ -1,1 +1,1 @@
-from .Part2Whole import Part2Whole
+from .Part2WholeDataAdapter import Part2WholeDataAdapter

@@ -25,12 +25,19 @@ class GeospatialEngine(BaseChartEngine):
         super().__init__()
         self.charts = []
         self.dce = DataConfigEngine()
-        self.scattdf, self.chpledf, self.conmapdf = self.dce.fetchData("Geo-spatial")
 
     def render_all(self) -> list[dict]:
-        self.choropleth_map(self.chpledf)
-        self.scatter_map_or_geo_plot(self.scattdf)
-        self.connectionMap(self.conmapdf)
+        # 1. Choropleth Map
+        chpledf = self.dce.fetchData("Geo-Choropleth")
+        self.choropleth_map(chpledf)
+
+        # 2. Scatter Map / Dot Map
+        scattdf = self.dce.fetchData("Geo-Scatter")
+        self.scatter_map_or_geo_plot(scattdf)
+
+        # 3.Connection Map
+        conmapdf = self.dce.fetchData("Geo-Connection")
+        self.connectionMap(conmapdf)
         return self.charts
 
     def choropleth_map(self, chpdf: pd.DataFrame) -> None:
@@ -90,7 +97,7 @@ class GeospatialEngine(BaseChartEngine):
             color="crimson",
             alpha=0.7,
         )
-        for i, txt in enumerate(self.scattdf["City"]):
+        for i, txt in enumerate(scattdf["City"]):
             ax.annotate(txt, (scattdf["Lon"][i] + 1, scattdf["Lat"][i]))
         ax.set_title("Static Coordinate Plot (Longitude vs Latitude)")
         ax.set_xlabel("Longitude")

@@ -3,11 +3,56 @@
   "version": "1.0.0",
   "charts": [
     {
-      "chartId": "Categorical",
+      "chartId": "Categorical-vertical",
       "dataAdapter": {
-        "modulePath": "poc.data",
-        "className": "DataAdapter",
-        "method": "categoricalData",
+        "modulePath": "poc.data.categorical",
+        "className": "CategoricalDataAdapter",
+        "method": "verticalbarData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Categorical-horizontal",
+      "dataAdapter": {
+        "modulePath": "poc.data.categorical",
+        "className": "CategoricalDataAdapter",
+        "method": "horizontalbarData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Categorical-stacked",
+      "dataAdapter": {
+        "modulePath": "poc.data.categorical",
+        "className": "CategoricalDataAdapter",
+        "method": "stackedbarData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Categorical-grouped",
+      "dataAdapter": {
+        "modulePath": "poc.data.categorical",
+        "className": "CategoricalDataAdapter",
+        "method": "groupedbarData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Categorical-lollipop",
+      "dataAdapter": {
+        "modulePath": "poc.data.categorical",
+        "className": "CategoricalDataAdapter",
+        "method": "lollipopData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Categorical-radar",
+      "dataAdapter": {
+        "modulePath": "poc.data.categorical",
+        "className": "CategoricalDataAdapter",
+        "method": "radarData",
         "parameters": {}
       }
     },
@@ -21,11 +66,29 @@
       }
     },
     {
-      "chartId": "Geo-spatial",
+      "chartId": "Geo-Choropleth",
       "dataAdapter": {
-        "modulePath": "poc.data",
-        "className": "DataAdapter",
-        "method": "spatialData",
+        "modulePath": "poc.data.geo",
+        "className": "GeoDataAdapter",
+        "method": "choroplethData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Geo-Scatter",
+      "dataAdapter": {
+        "modulePath": "poc.data.geo",
+        "className": "GeoDataAdapter",
+        "method": "scatterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Geo-Connection",
+      "dataAdapter": {
+        "modulePath": "poc.data.geo",
+        "className": "GeoDataAdapter",
+        "method": "connectionData",
         "parameters": {}
       }
     },
@@ -82,7 +145,7 @@
       "chartId": "Part2Whole_Pie",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "pieChartData",
         "parameters": {}
       }
@@ -91,7 +154,7 @@
       "chartId": "Part2Whole_Donut",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "donutData",
         "parameters": {}
       }
@@ -100,7 +163,7 @@
       "chartId": "Part2Whole_treemap",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "treemapData",
         "parameters": {}
       }
@@ -109,7 +172,7 @@
       "chartId": "Part2Whole_sunburst",
       "dataAdapter": {
         "modulePath": "poc.data.p2w",
-        "className": "Part2Whole",
+        "className": "Part2WholeDataAdapter",
         "method": "sunburstData",
         "parameters": {}
       }
@@ -155,11 +218,56 @@
       }
     },
     {
-      "chartId": "Relational",
+      "chartId": "Relational_Line",
       "dataAdapter": {
-        "modulePath": "poc.data",
-        "className": "DataAdapter",
-        "method": "relationalData",
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "lineChartData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_scatter",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "scatterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_bubble",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "bubbleChartData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_conn_scatter",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "connScatterData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_area",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "areaChartData",
+        "parameters": {}
+      }
+    },
+    {
+      "chartId": "Relational_stacked_area",
+      "dataAdapter": {
+        "modulePath": "poc.data.relation",
+        "className": "RelationshipDataAdapter",
+        "method": "stackedAreaData",
         "parameters": {}
       }
     }

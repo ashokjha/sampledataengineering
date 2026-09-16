@@ -1,12 +1,57 @@
 
 [
     {
-        "chartId": "Categorical",
+        "chartId": "Categorical-vertical",
         "dataAdapter": {
-            "modulePath": "poc.data",
-            "className": "DataAdapter",
-            "method": "categoricalData",
+            "modulePath": "poc.data.categorical",
+            "className": "CategoricalDataAdapter",
+            "method": "verticalbarData",
             "parameters": {}
         }
-    }
+    },
+    {
+        "chartId": "Categorical-horizontal",
+        "dataAdapter": {
+            "modulePath": "poc.data.categorical",
+            "className": "CategoricalDataAdapter",
+            "method": "horizontalbarData",
+            "parameters": {}
+        }
+    },
+    {
+        "chartId": "Categorical-stacked",
+        "dataAdapter": {
+            "modulePath": "poc.data.categorical",
+            "className": "CategoricalDataAdapter",
+            "method": "stackedbarData",
+            "parameters": {}
+        }
+    },
+    {
+        "chartId": "Categorical-grouped",
+        "dataAdapter": {
+            "modulePath": "poc.data.categorical",
+            "className": "CategoricalDataAdapter",
+            "method": "groupedbarData",
+            "parameters": {}
+        }
+    },
+    {
+        "chartId": "Categorical-lollipop",
+        "dataAdapter": {
+            "modulePath": "poc.data.categorical",
+            "className": "CategoricalDataAdapter",
+            "method": "lollipopData",
+            "parameters": {}
+        }
+    },
+    {
+        "chartId": "Categorical-radar",
+        "dataAdapter": {
+            "modulePath": "poc.data.categorical",
+            "className": "CategoricalDataAdapter",
+            "method": "radarData",
+            "parameters": {}
+        }
+    }                    
 ]
