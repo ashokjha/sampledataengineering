@@ -26,25 +26,25 @@ python src/poc/utils/json_merge.py path/to/masterreport.json path/to/reports.jso
 
 ### 1. Categorical
 
-  1.1 [Vertical Bar](../docs/categorical/verticalbarReadme.md)
-  1.2 [Horizontal Bar](../docs/categorical/horizontalbarReadme.md)
-  1.3 [Stacked Bar](../docs/categorical/stackedbarReadme.md)
-  1.4 [Grouped Bar](../docs/categorical/groupedbarReadme.md)
-  1.5 [Lollipop](../docs/categorical/lollipopReadme.md)
-  1.6 [Radar Chart](../docs/categorical/radarchartReadme.md)
+  1.1 [Vertical Bar](../docs/categorical/verticalbarReadme.md) and [check](../docs/categorical/vertical_bar.ipynb) \
+  1.2 [Horizontal Bar](../docs/categorical/horizontalbarReadme.md) and [check](../docs/categorical/horizontal_bar.ipynb) \
+  1.3 [Stacked Bar](../docs/categorical/stackedbarReadme.md) and [check](../docs/categorical/stacked_bar.ipynb) \
+  1.4 [Grouped Bar](../docs/categorical/groupedbarReadme.md) and [check](../docs/categorical/grouped_bar.ipynb) \
+  1.5 [Lollipop](../docs/categorical/lollipopReadme.md) and [check](../docs/categorical/lollipop.ipynb) \
+  1.6 [Radar Chart](../docs/categorical/radarchartReadme.md) and [check](../docs/categorical/radar_chart.ipynb)
 
 ### 2. Distributional
 
-  2.1 [Histogram](../docs/distribution/histogramReadme.md)
-  2.2 [Box](../docs/distribution/boxplotReadme.md)
-  2.3 [Violin](../docs/distribution/violinplotReadme.md)
-  2.4 [Density (KDE)](../docs/distribution/kdeReadme.md)
-  2.5 [Strip / Swarm](../docs/distribution/strpswarnReadme.md)
-  2.6 [Error Bar](../docs/distribution/errorbarReadme.md)
+  2.1 [Histogram](../docs/distribution/histogramReadme.md) and [check](../docs/distribution/histogram.ipynb) \
+  2.2 [Box](../docs/distribution/boxplotReadme.md) and [check](../docs/distribution/violin_plot.ipynb) \
+  2.3 [Violin](../docs/distribution/violinplotReadme.md) and [check](../docs/categorical/vertical_bar.ipynb) \
+  2.4 [Density (KDE)](../docs/distribution/kdeReadme.md) and [check](../docs/distribution/density_plot_kde.ipynb) \
+  2.5 [Strip / Swarm](../docs/distribution/strpswarnReadme.md) and [check](../docs/distribution/strip_swarm_plot.ipynb) \
+  2.6 [Error Bar](../docs/distribution/errorbarReadme.md) and [check](../docs/distribution/error_bar_chart.ipynb) 
 
 ### 3. Spatial
 
-  3.1 [Choropleth Map](../docs/geo/choroplethReadme.md)
+  3.1 [Choropleth Map](../docs/geo/choroplethReadme.md) and [check](../docs/geo/choropleth_map.ipynb) \
   3.2 Scatter Map / Dot Map
   3.3 Connection Map
 
