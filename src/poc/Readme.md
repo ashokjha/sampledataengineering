@@ -26,12 +26,12 @@ python src/poc/utils/json_merge.py path/to/masterreport.json path/to/reports.jso
 
 ### 1. Categorical
 
-  1.1 [Vertical Bar](../docs/categorical/Vertical_bar_README.md)  -> [see](../docs/categorical/vertical_bar.ipynb) 
-  1.2 [Horizontal Bar](../docs/categorical/Horizontal_bar_README.md)  -> [see](../docs/categorical/horizontal_bar.ipynb) 
-  1.3 [Stacked Bar](../docs/categorical/Stacked_bar_README.md)  -> [see](../docs/categorical/stacked_bar.ipynb) 
-  1.4 [Grouped Bar](../docs/categorical/Grouped_bar_README.md)  -> [see](../docs/categorical/grouped_bar.ipynb) 
-  1.5 [Lollipop](../docs/categorical/Lollipop_README.md)  -> [see](../docs/categorical/lollipop.ipynb) 
-  1.6 [Radar Chart](../docs/categorical/Radar_chart_README.md)  -> [see](../docs/categorical/radar_chart.ipynb)
+  1.1 [Vertical Bar](../docs/categorical/Vertical_bar_README.md)  -> [see](../docs/categorical/vertical_bar.ipynb) \
+  1.2 [Horizontal Bar](../docs/categorical/Horizontal_bar_README.md)  -> [see](../docs/categorical/horizontal_bar.ipynb) \
+  1.3 [Stacked Bar](../docs/categorical/Stacked_bar_README.md)  -> [see](../docs/categorical/stacked_bar.ipynb) \
+  1.4 [Grouped Bar](../docs/categorical/Grouped_bar_README.md)  -> [see](../docs/categorical/grouped_bar.ipynb) \
+  1.5 [Lollipop](../docs/categorical/Lollipop_README.md)  -> [see](../docs/categorical/lollipop.ipynb) \
+  1.6 [Radar Chart](../docs/categorical/Radar_chart_README.md)  -> [see](../docs/categorical/radar_chart.ipynb)\
 
 ### 2. Distributional
 
