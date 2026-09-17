@@ -35,52 +35,52 @@ python src/poc/utils/json_merge.py path/to/masterreport.json path/to/reports.jso
 
 ### 2. Distributional
 
-  2.1 [Histogram](../docs/distribution/Histogram_README.md)  -> [see](../docs/distribution/histogram.ipynb) 
-  2.2 [Box](../docs/distribution/Box_plot_README.md)  -> [see](../docs/distribution/box_plot.ipynb) 
-  2.3 [Violin](../docs/distribution/Violin_plot_README.md)  -> [see](../docs/distribution/violin_plot.ipynb) 
-  2.4 [Density (KDE)](../docs/distribution/Density_plot_kde_README.md)  -> [see](../docs/distribution/density_plot_kde.ipynb) 
-  2.5 [Strip / Swarm](../docs/distribution/StrpSwarn_README.md)  -> [see](../docs/distribution/strip_swarm_plot.ipynb) 
-  2.6 [Error Bar](../docs/distribution/Error_bar_README.md)  -> [see](../docs/distribution/error_bar_chart.ipynb)
+  2.1 [Histogram](../docs/distribution/Histogram_README.md)  -> [see](../docs/distribution/histogram.ipynb)\ 
+  2.2 [Box](../docs/distribution/Box_plot_README.md)  -> [see](../docs/distribution/box_plot.ipynb) \
+  2.3 [Violin](../docs/distribution/Violin_plot_README.md)  -> [see](../docs/distribution/violin_plot.ipynb) \
+  2.4 [Density (KDE)](../docs/distribution/Density_plot_kde_README.md)  -> [see](../docs/distribution/density_plot_kde.ipynb) \
+  2.5 [Strip / Swarm](../docs/distribution/StrpSwarn_README.md)  -> [see](../docs/distribution/strip_swarm_plot.ipynb) \
+  2.6 [Error Bar](../docs/distribution/Error_bar_README.md)  -> [see](../docs/distribution/error_bar_chart.ipynb)\
 
 ### 3. Spatial
 
-  3.1 [Choropleth Map](../docs/geo/Choropleth_README.md)  -> [see](../docs/geo/choropleth_map.ipynb) 
-  3.2 [Scatter Map / Dot Map](../docs/geo/ScatterOrDot_map_README.md)  -> [see](../docs/geo/scatter_map_dot_map.ipynb)
-  3.3 [Connection Map](../docs/geo/Connection_map_README.md) and [Check](../docs/geo/connection_map.ipynb)
+  3.1 [Choropleth Map](../docs/geo/Choropleth_README.md)  -> [see](../docs/geo/choropleth_map.ipynb) \
+  3.2 [Scatter Map / Dot Map](../docs/geo/ScatterOrDot_map_README.md)  -> [see](../docs/geo/scatter_map_dot_map.ipynb)\
+  3.3 [Connection Map](../docs/geo/Connection_map_README.md) and [Check](../docs/geo/connection_map.ipynb)\
 
 ### 4.Matrix & Relationship
 
-  4.1 [Heatmap](../docs/matrix/HeatMap_README.md)  -> [see](../docs/matrix/heatmap.ipynb)
-  4.2 [Clustermap](../docs/matrix/Clustermap_README.md)  -> [see](../docs/matrix/clustermap.ipynb)
-  4.3 [Sankey Diagram](../docs/matrix/Sankey_Diagram_README.md) -> [see](../docs/matrix/sankey_diagram.ipynb)
-  4.4 [Chord Diagram](../docs/matrix/Chord_Diagram_README.md)  -> [see](../docs/matrix/chord_diagram.ipynb)
+  4.1 [Heatmap](../docs/matrix/HeatMap_README.md)  -> [see](../docs/matrix/heatmap.ipynb)\
+  4.2 [Clustermap](../docs/matrix/Clustermap_README.md)  -> [see](../docs/matrix/clustermap.ipynb)\
+  4.3 [Sankey Diagram](../docs/matrix/Sankey_Diagram_README.md) -> [see](../docs/matrix/sankey_diagram.ipynb)\
+  4.4 [Chord Diagram](../docs/matrix/Chord_Diagram_README.md)  -> [see](../docs/matrix/chord_diagram.ipynb)\
 
 ### 5. Part-to-Whole & Hierarchical
 
-  5.1 [Pie](../docs/p2w/Pie_README.md)  -> [see](../docs/p2w/pie_chart.ipynb)
-  5.2 [Donut](../docs/p2w/Donut_README.md)  -> [see](../docs/p2w/donut_chart.ipynb)
-  5.3 [Treemap](../docs/p2w/Treemap_README.md)  -> [see](../docs/p2w/treemap.ipynb)
-  5.4 [Sunburst](../docs/p2w/Sunburst_README.md)  -> [see](../docs/p2w/sunburst.ipynb)
+  5.1 [Pie](../docs/p2w/Pie_README.md)  -> [see](../docs/p2w/pie_chart.ipynb)\
+  5.2 [Donut](../docs/p2w/Donut_README.md)  -> [see](../docs/p2w/donut_chart.ipynb)\
+  5.3 [Treemap](../docs/p2w/Treemap_README.md)  -> [see](../docs/p2w/treemap.ipynb)\
+  5.4 [Sunburst](../docs/p2w/Sunburst_README.md)  -> [see](../docs/p2w/sunburst.ipynb)\
 
 ### 6. Relational & Trend
 
-  6.1 [Line Chart](../docs/relation/Line_chart_README.md)  -> [see](../docs/relation/line_chart.ipynb)
-  6.2 [Scatter Plot](../docs/relation/Scatter_plot_README.md)  -> [see](../docs/relation/scatter_plot.ipynb)
-  6.3 [Bubble Chart](../docs/relation/Bubble_Chart_README.md)  -> [see](../docs/relation/bubble_chart.ipynb)
-  6.4 [Connected Scatter](<../docs/relation/Connected%20Scatter_README.md>)  -> [see](../docs/relation/connected_scatter.ipynb)
-  6.5 [Area Chart](../docs/relation/Area_Chart_README.md)  -> [see](../docs/relation/area_chart.ipynb)
-  6.6 [Stacked Area Chart](../docs/relation/Stacked_Area_Chart_README.md)  -> [see](../docs/relation/stacked_area_chart.ipynb)
+  6.1 [Line Chart](../docs/relation/Line_chart_README.md)  -> [see](../docs/relation/line_chart.ipynb)\
+  6.2 [Scatter Plot](../docs/relation/Scatter_plot_README.md)  -> [see](../docs/relation/scatter_plot.ipynb)\
+  6.3 [Bubble Chart](../docs/relation/Bubble_Chart_README.md)  -> [see](../docs/relation/bubble_chart.ipynb)\
+  6.4 [Connected Scatter](<../docs/relation/Connected%20Scatter_README.md>)  -> [see](../docs/relation/connected_scatter.ipynb)\
+  6.5 [Area Chart](../docs/relation/Area_Chart_README.md)  -> [see](../docs/relation/area_chart.ipynb)\
+  6.6 [Stacked Area Chart](../docs/relation/Stacked_Area_Chart_README.md)  -> [see](../docs/relation/stacked_area_chart.ipynb)\
 
 ### 7. 3D & Advanced Technical Charts
 
-  7.1 [Scatter Plot](../docs/threed/Scatter_plot_3D_README.md)  -> [see](../docs/threed/scatter_plot_3d.ipynb)
-  7.2 [Surface Plot](../docs/threed/Surface_Plot_README.md)  -> [see](../docs/threed/scatter_surface_plot.ipynb)
-  7.3 [Parallel Coordinates Plot](../docs/threed/Parallel_Coordinates_Plot_README.md)  -> [see](../docs/threed/parallel_coordinates_plot.ipynb)
-  7.4 [Word Cloud](../docs/threed/Word_cloud_README.md)  -> [see](../docs/threed/word_cloud.ipynb)
+  7.1 [Scatter Plot](../docs/threed/Scatter_plot_3D_README.md)  -> [see](../docs/threed/scatter_plot_3d.ipynb)\
+  7.2 [Surface Plot](../docs/threed/Surface_Plot_README.md)  -> [see](../docs/threed/scatter_surface_plot.ipynb)\
+  7.3 [Parallel Coordinates Plot](../docs/threed/Parallel_Coordinates_Plot_README.md)  -> [see](../docs/threed/parallel_coordinates_plot.ipynb)\
+  7.4 [Word Cloud](../docs/threed/Word_cloud_README.md)  -> [see](../docs/threed/word_cloud.ipynb)\
 
 ### 8. Financial
 
-  8.1 Market Analysis
+  8.1 Market Analysis\
 
 # Charts PDF
 
