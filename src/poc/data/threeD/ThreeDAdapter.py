@@ -1,8 +1,18 @@
 import pandas as pd
 import numpy as np
 
+# import os
+# from dotenv import load_dotenv
+# from typing import Final
+
+# from poc.utils.data.GenerateData import generate_data
+
 
 class ThreeDAdapter:
+    # load_dotenv()
+    # DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/ThreeD"
+    # os.makedirs(DATA_PATH, exist_ok=True)
+
     # 1. 3D Scatter Plot
     @staticmethod
     def threeDdata() -> pd.DataFrame:
@@ -57,6 +67,7 @@ class ThreeDAdapter:
         pcData = pd.DataFrame(data)
         category_mapping = {"Economy": 0, "Sedan": 1, "Sports": 2, "Luxury": 3}
         pcData["Category_ID"] = pcData["Category"].map(category_mapping)
+
         return pcData
 
     # 4. 3D Word cloud Data

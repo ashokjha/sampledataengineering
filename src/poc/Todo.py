@@ -25,6 +25,22 @@ class Test:
         plt.grid(True, alpha=0.3)
         plt.show()
 
+    @staticmethod
+    def test2():
+        import numpy as np
+
+        x = np.linspace(-5, 5, 100)
+        y = np.linspace(-5, 5, 100)
+        X, Y = np.meshgrid(x, y)
+        surface = np.sin(np.sqrt(X**2 + Y**2))
+        data = {
+            "X": X.flatten(),
+            "Y": Y.flatten(),
+            "surface": surface.flatten(),
+        }
+        df = pd.DataFrame(data)
+        print(df["X"])
+
 
 if __name__ == "__main__":
-    Test.test1()
+    Test.test2()

@@ -1,0 +1,17 @@
+Quarter,Project_Name,Marketing_Spend,Revenue,Team_Size,Status
+Q1,Alpha,10000,15000,3,Planning
+Q1,Beta,25000,48000,8,In Progress
+Q1,Gamma,15000,12000,4,Planning
+Q1,Delta,40000,90000,12,In Progress
+Q2,Alpha,12000,22000,4,In Progress
+Q2,Beta,28000,60000,9,In Progress
+Q2,Gamma,18000,25000,5,In Progress
+Q2,Delta,42000,105000,14,In Progress
+Q3,Alpha,15000,35000,5,In Progress
+Q3,Beta,35000,85000,12,Completed
+Q3,Gamma,22000,45000,6,In Progress
+Q3,Delta,48000,130000,15,Completed
+Q4,Alpha,20000,55000,6,Completed
+Q4,Beta,45000,120000,15,Completed
+Q4,Gamma,30000,70000,8,Completed
+Q4,Delta,55000,180000,18,Completed

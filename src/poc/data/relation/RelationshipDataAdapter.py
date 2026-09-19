@@ -1,8 +1,14 @@
 import pandas as pd
 import numpy as np
+import os
+from dotenv import load_dotenv
+from typing import Final
 
 
 class RelationshipDataAdapter:
+    load_dotenv()
+    DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/Relational"
+    os.makedirs(DATA_PATH, exist_ok=True)
 
     @staticmethod
     def lineChartData() -> pd.DataFrame:
@@ -16,6 +22,10 @@ class RelationshipDataAdapter:
                 "Metric_B": np.cumsum(np.random.normal(loc=0.3, scale=1.5, size=60))
                 + 30,
             }
+        )
+        lcdf.to_csv(
+            f"{RelationshipDataAdapter.DATA_PATH}/linechart.csv",
+            index=False,
         )
         return lcdf
 
@@ -32,6 +42,12 @@ class RelationshipDataAdapter:
                 + 30,
             }
         )
+
+        scdf.to_csv(
+            f"{RelationshipDataAdapter.DATA_PATH}/scatterData.csv",
+            index=False,
+        )
+
         return scdf
 
     @staticmethod
@@ -115,6 +131,12 @@ class RelationshipDataAdapter:
         }
 
         bubbleData = pd.DataFrame(data)
+
+        bubbleData.to_csv(
+            f"{RelationshipDataAdapter.DATA_PATH}/bubbleChartData.csv",
+            index=False,
+        )
+
         return bubbleData
 
     @staticmethod
@@ -124,6 +146,11 @@ class RelationshipDataAdapter:
         metric_values = [12, 19, 15, 28, 24, 35, 31, 47, 42, 55]
 
         connscdf = pd.DataFrame({"Month": months, "Growth_Metric": metric_values})
+        connscdf.to_csv(
+            f"{RelationshipDataAdapter.DATA_PATH}/connectionScatterData.csv",
+            index=False,
+        )
+
         return connscdf
 
     @staticmethod
@@ -134,6 +161,12 @@ class RelationshipDataAdapter:
             "Visitors": [1200, 1500, 1100, 1800, 2400, 2100, 1900],
         }
         acdf = pd.DataFrame(data)
+
+        acdf.to_csv(
+            f"{RelationshipDataAdapter.DATA_PATH}/areaChartData.csv",
+            index=False,
+        )
+
         return acdf
 
     @staticmethod
@@ -159,5 +192,11 @@ class RelationshipDataAdapter:
             "Services": [15, 18, 22, 25, 24, 28, 32, 36, 35, 40, 45, 50],
         }
 
-        stardf = pd.DataFrame(data)
-        return stardf
+        stackedAreadf = pd.DataFrame(data)
+
+        stackedAreadf.to_csv(
+            f"{RelationshipDataAdapter.DATA_PATH}/stackedAreaData.csv",
+            index=False,
+        )
+
+        return stackedAreadf

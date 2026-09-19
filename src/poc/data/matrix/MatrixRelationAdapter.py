@@ -1,8 +1,15 @@
 import pandas as pd
 import numpy as np
+import os
+from dotenv import load_dotenv
+from typing import Final
+from poc.utils.data.GenerateData import generate_data
 
 
 class MatrixRelationAdapter:
+    load_dotenv()
+    DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/Matrix"
+    os.makedirs(DATA_PATH, exist_ok=True)
 
     # 1. HeatMap
     @staticmethod
@@ -18,6 +25,12 @@ class MatrixRelationAdapter:
         data = np.random.rand(5, 5)
         cols = ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"]
         df_matrix = pd.DataFrame(data, columns=cols, index=cols)
+
+        df_matrix.to_csv(
+            f"{MatrixRelationAdapter.DATA_PATH}/HeatMapdata.csv",
+            index=False,
+        )
+
         return df_matrix
 
     # 2. hierarchical clustering
@@ -37,6 +50,11 @@ class MatrixRelationAdapter:
             columns=[f"Col_{i}" for i in range(10)],
             index=[f"Row_{i}" for i in range(10)],
         )
+
+        clusterdf.to_csv(
+            f"{MatrixRelationAdapter.DATA_PATH}/clusturerData.csv",
+            index=False,
+        )
         return clusterdf
 
     # 3. sankey
@@ -48,14 +66,20 @@ class MatrixRelationAdapter:
              pd.DataFrame: _description_
         """
         # Long-form data for flow/relationship visualizations
-        df_flow = pd.DataFrame(
+        sankeyflowdf = pd.DataFrame(
             {
                 "Source": ["A", "A", "B", "B", "C"],
                 "Target": ["X", "Y", "X", "Z", "Y"],
                 "Value": [10, 20, 15, 5, 25],
             }
         )
-        return df_flow
+
+        sankeyflowdf.to_csv(
+            f"{MatrixRelationAdapter.DATA_PATH}/sankeyflowdata.csv",
+            index=False,
+        )
+
+        return sankeyflowdf
 
     # 4. Chord Diagram
     @staticmethod
@@ -87,8 +111,15 @@ class MatrixRelationAdapter:
         matrix[4, 5] = matrix[5, 4] = 102
         matrix[5, 6] = matrix[6, 5] = 84
         np.fill_diagonal(matrix, 0)
-        chord_matrix = pd.DataFrame(matrix, columns=departments, index=departments)
-        return chord_matrix
+
+        chord_matrixdf = pd.DataFrame(matrix, columns=departments, index=departments)
+
+        chord_matrixdf.to_csv(
+            f"{MatrixRelationAdapter.DATA_PATH}/hierarchicalclustering.csv",
+            index=False,
+        )
+
+        return chord_matrixdf
 
 
 if __name__ == "__main__":

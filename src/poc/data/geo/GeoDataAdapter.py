@@ -1,7 +1,14 @@
 import pandas as pd
+import os
+from dotenv import load_dotenv
+from typing import Final
+from poc.utils.data.GenerateData import generate_data
 
 
 class GeoDataAdapter:
+    load_dotenv()
+    DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/Geo"
+    os.makedirs(f"{DATA_PATH}/Geo", exist_ok=True)
 
     def choroplethData() -> pd.DataFrame:
         # Choropleth Data
@@ -44,6 +51,12 @@ class GeoDataAdapter:
                 "Population_Scale": [83, 39, 27, 23, 16, 78, 0.0089, 99],
             }
         )
+
+        scatterDf.to_csv(
+            f"{GeoDataAdapter.DATA_PATH}/Geo_Scatter_data.csv",
+            index=False,
+        )
+
         return scatterDf
 
     def connectionData():
@@ -62,6 +75,10 @@ class GeoDataAdapter:
             "Per_Capita_Income_USD": filtered_data["Per_Capita_Income_USD"],
             "Economy_GDP_USD_Trillion": filtered_data["Economy_GDP_USD_Trillion"],
         }
-
         conmapdf = pd.DataFrame(datdct).reset_index(drop=True)
+
+        conmapdf.to_csv(
+            f"{GeoDataAdapter.DATA_PATH}/geoConnectionMapData.csv",
+            index=False,
+        )
         return conmapdf

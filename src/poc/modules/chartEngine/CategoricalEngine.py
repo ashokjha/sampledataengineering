@@ -62,8 +62,8 @@ class CategoricalEngine(BaseChartEngine):
         sns.barplot(
             data=verticaldf,
             x="Quarter",
-            y="Sales",
-            hue="Product",
+            y="ROI",
+            # hue="Product",
             orient="v",
             ax=ax,
             palette="Set2",
@@ -73,7 +73,7 @@ class CategoricalEngine(BaseChartEngine):
         vertical_bar_fig_i = px.bar(
             verticaldf,
             x="Quarter",
-            y="Sales",
+            y="ROI",
             color="Product",
             orientation="v",
             barmode="group",
