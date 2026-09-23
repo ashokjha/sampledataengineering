@@ -1,0 +1,6 @@
+,Car_Model,Price_USD,Horsepower,Fuel_Efficiency_MPG,Safety_Rating,Category,Category_ID
+0,Model A,22000,140,35,4,Economy,0
+1,Model B,45000,350,18,5,Sports,2
+2,Model C,35000,180,28,4,Sedan,1
+3,Model D,60000,400,15,5,Luxury,3
+4,Model E,18000,120,38,3,Economy,0

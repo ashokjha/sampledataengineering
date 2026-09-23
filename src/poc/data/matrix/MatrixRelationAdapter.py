@@ -24,12 +24,9 @@ class MatrixRelationAdapter:
         # Create a correlation-like matrix dataset
         data = np.random.rand(5, 5)
         cols = ["Feature A", "Feature B", "Feature C", "Feature D", "Feature E"]
-        df_matrix = pd.DataFrame(data, columns=cols, index=cols)
+        df_matrix = pd.DataFrame(data, columns=cols)
 
-        df_matrix.to_csv(
-            f"{MatrixRelationAdapter.DATA_PATH}/HeatMapdata.csv",
-            index=False,
-        )
+        df_matrix.to_csv(f"{MatrixRelationAdapter.DATA_PATH}/HeatMapdata.csv")
 
         return df_matrix
 
@@ -114,10 +111,7 @@ class MatrixRelationAdapter:
 
         chord_matrixdf = pd.DataFrame(matrix, columns=departments, index=departments)
 
-        chord_matrixdf.to_csv(
-            f"{MatrixRelationAdapter.DATA_PATH}/hierarchicalclustering.csv",
-            index=False,
-        )
+        chord_matrixdf.to_csv(f"{MatrixRelationAdapter.DATA_PATH}/ChordSampleData.csv")
 
         return chord_matrixdf
 

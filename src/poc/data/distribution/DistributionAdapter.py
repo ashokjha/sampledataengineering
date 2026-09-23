@@ -22,7 +22,7 @@ class DistributionAdapter:
         np.random.seed(42)
         data = {
             "Value": np.random.normal(loc=50, scale=10, size=500),
-            "Category": np.random.choice(["Sky", "Surfae", "Blackwhole"], size=500),
+            "Category": np.random.choice(["Sky", "Surface", "Blackwhole"], size=500),
         }
 
         distributiondf = pd.DataFrame(data)

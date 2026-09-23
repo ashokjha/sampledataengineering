@@ -1,17 +1,17 @@
 import pandas as pd
 import numpy as np
 
-# import os
-# from dotenv import load_dotenv
-# from typing import Final
+import os
+from dotenv import load_dotenv
+from typing import Final
 
 # from poc.utils.data.GenerateData import generate_data
 
 
 class ThreeDAdapter:
-    # load_dotenv()
-    # DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/ThreeD"
-    # os.makedirs(DATA_PATH, exist_ok=True)
+    load_dotenv()
+    DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/ThreeD"
+    os.makedirs(DATA_PATH, exist_ok=True)
 
     # 1. 3D Scatter Plot
     @staticmethod
@@ -23,14 +23,15 @@ class ThreeDAdapter:
             pd.DataFrame: _description_
         """
         np.random.seed(5)
-        df = pd.DataFrame(
+        t3df = pd.DataFrame(
             {
                 "X": np.random.normal(0, 1, 100),
                 "Y": np.random.normal(0, 1, 100),
                 "Z": np.random.normal(0, 1, 100),
             }
         )
-        return df
+        t3df.to_csv(f"{ThreeDAdapter.DATA_PATH}/t3dScatterData.csv")
+        return t3df
 
     # 2. 3D Surface Data
     @staticmethod
@@ -45,6 +46,10 @@ class ThreeDAdapter:
         y = np.linspace(-5, 5, 100)
         X, Y = np.meshgrid(x, y)
         surface = np.sin(np.sqrt(X**2 + Y**2))
+        surfaceDf = df = pd.DataFrame(
+            {"X": X.ravel(), "Y": Y.ravel(), "Surface": surface.ravel()}
+        )
+        surfaceDf.to_csv(f"{ThreeDAdapter.DATA_PATH}/t3dSurfaceData.csv")
         return X, Y, surface
 
     # 3. 3D Parallel Coordinates Data
@@ -67,7 +72,7 @@ class ThreeDAdapter:
         pcData = pd.DataFrame(data)
         category_mapping = {"Economy": 0, "Sedan": 1, "Sports": 2, "Luxury": 3}
         pcData["Category_ID"] = pcData["Category"].map(category_mapping)
-
+        pcData.to_csv(f"{ThreeDAdapter.DATA_PATH}/parallelCordinatesData.csv")
         return pcData
 
     # 4. 3D Word cloud Data
@@ -98,4 +103,5 @@ class ThreeDAdapter:
             ("Array", 30),
             ("Matrix", 25),
         ]
+        pd.DataFrame(wordDict).to_csv(f"{ThreeDAdapter.DATA_PATH}/t3dWordCloudData.csv")
         return wordDict

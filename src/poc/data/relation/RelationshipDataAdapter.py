@@ -43,10 +43,7 @@ class RelationshipDataAdapter:
             }
         )
 
-        scdf.to_csv(
-            f"{RelationshipDataAdapter.DATA_PATH}/scatterData.csv",
-            index=False,
-        )
+        scdf.to_csv(f"{RelationshipDataAdapter.DATA_PATH}/scatterData.csv")
 
         return scdf
 
