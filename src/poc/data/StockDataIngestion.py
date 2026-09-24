@@ -1,8 +1,10 @@
 # poc/modules/chartEngine/StockDataIngestion.py
-
+import os
 import yfinance as yf
 import pandas as pd
 import logging
+from dotenv import load_dotenv
+from typing import Final
 
 logger = logging.getLogger("StockDataIngestion")
 
@@ -11,6 +13,10 @@ class StockDataIngestion:
     """
     Service to fetch and validate financial market data using yfinance.
     """
+
+    load_dotenv()
+    DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/Financial"
+    os.makedirs(DATA_PATH, exist_ok=True)
 
     @staticmethod
     def fetch_ticker_data(
@@ -49,6 +55,7 @@ class StockDataIngestion:
             # 2. Force every column to be a float
             df = df.astype(float)
 
+            df.to_csv(f"{StockDataIngestion.DATA_PATH}/stockdata.csv")
             logger.info(f"Successfully ingested {len(df)} rows of data for {ticker}.")
             return df
 

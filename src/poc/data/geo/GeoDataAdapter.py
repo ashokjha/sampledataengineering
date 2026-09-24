@@ -8,7 +8,7 @@ from poc.utils.data.GenerateData import generate_data
 class GeoDataAdapter:
     load_dotenv()
     DATA_PATH: Final = os.environ.get("POCSAMPLEDATA", "data/tmp") + "/Geo"
-    os.makedirs(f"{DATA_PATH}/Geo", exist_ok=True)
+    os.makedirs(DATA_PATH, exist_ok=True)
 
     def choroplethData() -> pd.DataFrame:
         # Choropleth Data
